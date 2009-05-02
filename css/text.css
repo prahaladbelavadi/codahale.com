@@ -10,6 +10,3 @@ p.date { font-style: italic; }
 small { font-size: 70%; }
 p code { border: 1px solid #DEDEDE; padding: 2px; background-color: #F8F8FF; color: #444444; }
 pre { border-left: 2px solid #DEDEDE; padding-left: 5px; }
-blockquote { quotes: "\201C" "\201D"; }
-blockquote:before { content: open-quote; font-weight: bold; font-size: 150%; }
-blockquote:after { content: close-quote; font-weight: bold; font-size: 150%; } 
