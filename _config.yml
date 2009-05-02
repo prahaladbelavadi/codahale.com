@@ -1,3 +1,4 @@
 auto: true
-permalink: slug
+permalink: /:title
 pygments: true
+markdown: rdiscount
