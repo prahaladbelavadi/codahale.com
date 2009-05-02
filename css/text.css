@@ -1,0 +1,4 @@
+body { font-family: "Book Antigua"; font-size: large; }
+#header * { margin-top: 0; margin-bottom: 0; }
+#header p { font-size: 90%; }
+small { font-size: 70%; }
