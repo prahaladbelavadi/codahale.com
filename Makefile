@@ -5,7 +5,7 @@ clean:
 	rm -rf _site
 
 server: clean
-	jekyll
+	jekyll --server --auto
 
 publish: build
 	@rsync -avz _site/ codahale@codahale.com:~/codahale.com
