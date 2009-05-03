@@ -1,12 +1,13 @@
-body { font-family: "Book Antigua"; font-size: large; }
+body { font-family: "Book Antigua"; background-color: #FEFEF3; font-size: large; }
 #header * { margin-top: 0; margin-bottom: 0; }
 #header p { font-size: 90%; }
 #header h1 { font-size: 110%; }
-h2.post-title { font-size: 120%; }
-h2 { font-size: 110%; }
+h2.post-title { font-size: 120%; margin-bottom: 0; }
+h2 { font-size: 120%; }
 h1 a, h2 a { text-decoration: none; }
-p { width: 40em; }
-p.date { font-style: italic; }
+p, ul { width: 30em; margin-left: 5px; }
+p.date { font-style: italic; margin-top: 0; font-size: small; }
 small { font-size: 70%; }
-p code { border: 1px solid #DEDEDE; padding: 2px; background-color: #F8F8FF; color: #444444; }
-pre { border-left: 2px solid #DEDEDE; padding-left: 5px; }
+p code, li>code { background-color:#EEEEFF; border:1px solid #DDDDDD; font-size:95%; padding:0 0.2em; }
+code { font-family: "Consolas";  }
+pre { border-left: 3px solid #DEDEDE; padding-left: 5px; }
