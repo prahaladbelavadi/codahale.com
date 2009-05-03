@@ -129,7 +129,7 @@ public class NaiveWeekdayResource {
 {% endhighlight %}
 
 The changes here are obvious: we use `ISO_BASIC`, a parser and formatter, to 
-turn `dateAsString` into a DateTime, `date`. `date.dayOfWeek()` returns a 
+turn `dateAsString` into a `DateTime`, `date`. `date.dayOfWeek()` returns a 
 property which we turn into text and send back to the client.
 
 Now it does what we want:
@@ -145,7 +145,7 @@ And then:
     
     20060714 is on a Friday.
 
-But this could still be a Potempkin application. So let's do something you 
+But this could still be a Potemkin application. So let's do something you 
 rarely see in slide shows. Let's throw some bad input at it.
 
 
