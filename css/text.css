@@ -2,7 +2,9 @@ body { font-family: "Book Antigua"; background-color: #FEFEF3; font-size: large;
 #header * { margin-top: 0; margin-bottom: 0; }
 #header p { font-size: 90%; }
 #header h1 { font-size: 110%; }
-h2.post-title { font-size: 120%; margin-bottom: 0; }
+#header h1 a, #header h1 a:visited { color: #000; }
+h2.post-title, h2.static-title { font-size: 120%; margin-bottom: 0; }
+h2.post-title a, h2.static-title a { color: #000; }
 h2 { font-size: 120%; }
 h1 a, h2 a { text-decoration: none; }
 p, ul, ol { width: 30em; margin-left: 5px; }
