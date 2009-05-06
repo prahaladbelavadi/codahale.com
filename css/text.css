@@ -5,7 +5,7 @@ body { font-family: "Book Antigua"; background-color: #FEFEF3; font-size: large;
 h2.post-title { font-size: 120%; margin-bottom: 0; }
 h2 { font-size: 120%; }
 h1 a, h2 a { text-decoration: none; }
-p, ul { width: 30em; margin-left: 5px; }
+p, ul, ol { width: 30em; margin-left: 5px; }
 p.date { font-style: italic; margin-top: 0; font-size: small; }
 small { font-size: 70%; }
 p code, li>code { background-color:#EEEEFF; border:1px solid #DDDDDD; font-size:95%; padding:0 0.2em; }
