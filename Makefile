@@ -8,4 +8,4 @@ server: clean
 	jekyll --server --auto
 
 publish: build
-	@rsync -avz _site/ codahale@codahale.com:~/codahale.com
+	@rsync -avz --exclude Makefile --exclude README.md _site/ codahale@codahale.com:~/codahale.com
