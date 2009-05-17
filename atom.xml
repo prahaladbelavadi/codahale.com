@@ -4,6 +4,10 @@ layout: nil
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 	<title>codahale.com</title>
+	<subtitle>
+		Coda Hale lives in Berkeley, CA, where he writes about programming, web
+		development, and the occasional bit about bicycles.
+	</subtitle>
 	<link href="http://codahale.com/atom.xml" rel="self"/>
 	<link href="http://codahale.com/"/>
 	<updated>{{ site.time | date_to_xmlschema }}</updated>
