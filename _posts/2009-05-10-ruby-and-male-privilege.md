@@ -11,7 +11,7 @@ I read this today:
 > A female computer science professor wrote:
 >> [A]t a conference in France, a male speaker (French), who was speaking about
 >> the importance of testing, showed an overhead slide of a naked woman with a
->> caption of the sort -- 'Would you buy this product without testing it
+>> caption of the sort--'Would you buy this product without testing it
 >> first?' There were only 2 or 3 women in the audience (of about 150), but I
 >> had fleeting feelings of having accidentally walked into a stag party and
 >> wondering if he had either not expected any women to be there or had

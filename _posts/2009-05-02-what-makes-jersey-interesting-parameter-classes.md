@@ -59,7 +59,7 @@ returned gets turned into an HTTP response entity, and you're off to the races.
 
 There's a lot more to it, but that's Jersey and JSR311 in a nutshell.
 
-What this article is about is how a Jersey application handles change -- you can
+What this article is about is how a Jersey application handles change--you can
 find anything about a framework which will look good on a slide but end up
 sucking horribly in real life (see: Rails' `respond_to`).
 
@@ -106,7 +106,7 @@ And our resource class responds with:
 
 This isn't much more complicated than `HelloWorldResource`; we're still in
 could-be-crap-but-looks-good-on-a-slice territory. So let's add the guts of the
-resource -- date parsing and weekday calculation. Because Java's `Calendar` and 
+resource--date parsing and weekday calculation. Because Java's `Calendar` and 
 `Date` classes are *hilariously* bad, I'm going to use 
 [Joda Time](http://joda-time.sourceforge.net/), which kicks ass.
 
@@ -169,7 +169,7 @@ That's not terrible, but it needs to change.
 
 First, `500 Internal Server Error`is the wrong response. The problem isn't with 
 the server's state, it's with the request. A better response would be `400 Bad 
-Request` -- that way the client knows not to retry the request, and we can add 
+Request`--that way the client knows not to retry the request, and we can add 
 an explanation of what about the request needs to change before it will be
 acceptable.
 
@@ -201,7 +201,7 @@ public class BetterWeekdayResource {
 }
 {% endhighlight %}
 
-This is a pretty simple approach -- catch the exception, and throw a 
+This is a pretty simple approach--catch the exception, and throw a 
 `WebApplicationException` with an HTTP response explaining the problem. Jersey
 catches the `WebApplicationException` and sends the attached `Response`.
 
@@ -219,12 +219,12 @@ Yay!
     Couldn't parse date: 200607f14 (Invalid format: "200607f14" is malformed at "f14")
 
 Ok, so our code is now correct and handles errors, but its readability has 
-suffered -- for two lines of domain-specific code, we have nine lines of error
+suffered--for two lines of domain-specific code, we have nine lines of error
 handling. *Ruh-roh.* If we continue with this approach, every date parsing
 resource in the application will have its own error handling, which means a lot
 of copying and pasting and testing the error handling and bugs, bugs, bugs.
 
-Here's where Jersey starts to shine -- separation of concerns.
+Here's where Jersey starts to shine--separation of concerns.
 
 Round Four: Time To Clean
 -------------------------
@@ -320,10 +320,10 @@ Round Five: And *Stay* Solved, Damnit
 -------------------------------------
 
 We can safely assume we'll be writing a *lot* of these param classes for any
-given project -- in fact, the more of these we write, the cleaner and more 
+given project--in fact, the more of these we write, the cleaner and more 
 testable our resources are.
 
-Think about it -- does your web service accept any of the following things?
+Think about it--does your web service accept any of the following things?
 
 * URIs
 * Numbers

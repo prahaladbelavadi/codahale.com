@@ -16,11 +16,11 @@ Some things I believe:
 * If a problem is worth solving, it's worth solving well and once.
 * Incurious people terrify me.
 * There is no such thing as untestable code.
-* Over-attachment to tools is dysfunctional -- don't mistake what the tool 
+* Over-attachment to tools is dysfunctional--don't mistake what the tool 
   allows you to do with the tool itself.
 * Mornings require a french press and some
   [Blue Bottle](http://bluebottlecoffee.net/) coffee.
 * The internal components of your software should exhibit the same grace and
-  utility as the external components -- looking under the hood should be
+  utility as the external components--looking under the hood should be
   delightful, not horrifying.
 * People should wear more wool.
