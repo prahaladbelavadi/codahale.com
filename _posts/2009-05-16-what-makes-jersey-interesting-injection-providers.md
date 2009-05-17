@@ -89,10 +89,12 @@ public String uppercase(@Context HttpHeaders headers) {
 In order to test that, we'll have to come up with an `HttpHeaders` mock and stub
 its `getAcceptableLanguages()` to return a list of locales. Bleagh.
 
+<ins>
 **Update:** If you're wondering why you'd need a `Locale` to convert a string to
 uppercase, check out the Turkish language. The uppercase version of **i** 
 (U+0069) is **İ** (U+0130), and the lowercase version of **I** (U+0049) is **ı** 
 (U+0131). It matters.
+</ins>
 
 Now make it uglier
 ------------------
