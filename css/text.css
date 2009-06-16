@@ -1,4 +1,4 @@
-body { font-family: "Book Antigua"; background-color: #FEFEF3; font-size: large; }
+body { font-family:"Sabon Lt Std","Hoefler Text","Palatino Linotype","Book Antiqua",serif; background-color: #FEFEF3; font-size: large; }
 #header * { margin-top: 0; margin-bottom: 0; }
 #header p { font-size: 90%; }
 #header h1 { font-size: 110%; }
@@ -11,5 +11,5 @@ p, ul, ol { width: 30em; margin-left: 5px; }
 p.date { font-style: italic; margin-top: 0; font-size: small; }
 small { font-size: 70%; }
 p code, li>code { background-color:#EEEEFF; border:1px solid #DDDDDD; font-size:95%; padding:0 0.2em; }
-code { font-family: "Consolas";  }
+code { font-family: "Consolas", "Inconsolata", "Anonymous", "Monaco", monospace;  }
 pre { border-left: 3px solid #DEDEDE; padding-left: 5px; }
