@@ -102,21 +102,28 @@ in Python:
 
 {% highlight python %}
 def is_equal(a, b):
+    if len(a) != len(b):
+        return False;
+    
     result = 0
     for x, y in zip(a, b):
         result |= x ^ y
-    return (result == 0) and (len(a) == len(b))
+    return result == 0
 {% endhighlight %}
 
 In Java, that would look like this:
 
 {% highlight java %}
 public static boolean isEqual(byte[] a, byte[] b) {
+    if (a.length != b.length) {
+        return false;
+    }
+    
     int result = 0;
-    for (int i = 0; i < Math.min(a.length, b.length); i++) {
+    for (int i = 0; i < a.length; i++) {
       result |= a[i] ^ b[i]
     }
-    return (a.length == b.length) && (result == 0)
+    return result == 0;
 }
 {% endhighlight %}
 
@@ -208,3 +215,12 @@ timing attacks in my own code. His
 [When Crypto Attacks](http://www.youtube.com/watch?v=ySQl0NhW1J0) talk should be
 required watching for everyone with access to a compiler.
 
+
+Updated August 13, 2009
+-----------------------
+
+As [sophecles on Hacker News](http://news.ycombinator.com/item?id=761059) 
+pointed out, I had overly refactored the suggested constant-time algorithms and
+introduced a more subtle timing attack vulnerability via the return 
+statement's boolean expression short-circuit. The algorithm has been updated to
+fix this.
