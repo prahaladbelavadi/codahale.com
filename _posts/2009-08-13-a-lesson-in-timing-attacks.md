@@ -219,7 +219,7 @@ required watching for everyone with access to a compiler.
 Updated August 13, 2009
 -----------------------
 
-As [sophecles on Hacker News](http://news.ycombinator.com/item?id=761059) 
+As [sophacles on Hacker News](http://news.ycombinator.com/item?id=761059) 
 pointed out, I had overly refactored the suggested constant-time algorithms and
 introduced a more subtle timing attack vulnerability via the return 
 statement's boolean expression short-circuit. The algorithm has been updated to
