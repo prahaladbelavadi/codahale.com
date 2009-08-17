@@ -13,3 +13,4 @@ small { font-size: 70%; }
 p code, li>code { background-color:#EEEEFF; border:1px solid #DDDDDD; font-size:95%; padding:0 0.2em; }
 code { font-family: "Consolas", "Inconsolata", "Anonymous", "Monaco", monospace;  }
 pre { border-left: 3px solid #DEDEDE; padding-left: 5px; }
+#call-to-action, #discussion-blurb { font-size: 70%; }

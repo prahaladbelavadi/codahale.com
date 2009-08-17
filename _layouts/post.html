@@ -9,12 +9,26 @@ layout: default
 
 <hr />
 
-<p>
-	<small>
-		You'll notice there are no comments here. I hate discussing things via
-		blog comments. If you'd like to talk, <a href="/contact.html">drop me a
-		line</a>. If you'd like to discuss things in public, post on your blog.
-		This content is mine, but feel free to avail yourself of your
-		<a href="http://www.copyright.gov/fls/fl102.html">fair use rights</a>.
-	</small>
+<p id="discussion-blurb">
+	You'll notice there are no comments here. I hate discussing things via
+	blog comments. If you'd like to talk, <a href="/contact.html">drop me a
+	line</a>. If you'd like to discuss things in public, post on your blog.
+	This content is mine, but feel free to avail yourself of your
+	<a href="http://www.copyright.gov/fls/fl102.html">fair use rights</a>.
 </p>
+
+<hr />
+
+<div id="call-to-action">
+	<h3>Other Things I've Recently Written</h3>
+	<ul>
+	{% for post in site.posts limit:5 %}
+	{% if post.url != page.url %}
+	<li>
+		<a href="{{ post.url }}">{{ post.title }}</a>
+		({{ post.date | date_to_string }})
+	</li>
+	{% endif %}
+	{% endfor %}
+	</ul>
+</div>
