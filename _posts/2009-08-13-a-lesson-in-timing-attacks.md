@@ -103,7 +103,7 @@ in Python:
 {% highlight python %}
 def is_equal(a, b):
     if len(a) != len(b):
-        return False;
+        return False
     
     result = 0
     for x, y in zip(a, b):
