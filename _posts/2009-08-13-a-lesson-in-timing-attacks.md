@@ -224,3 +224,10 @@ pointed out, I had overly refactored the suggested constant-time algorithms and
 introduced a more subtle timing attack vulnerability via the return 
 statement's boolean expression short-circuit. The algorithm has been updated to
 fix this.
+
+
+Updated December 3, 2009
+------------------------
+
+The timing attack vulnerability in `MessageDigest` was fixed in
+[Java SE 6 Update 17](http://java.sun.com/javase/6/webnotes/6u17.html).
