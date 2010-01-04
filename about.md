@@ -4,8 +4,8 @@ title: about me
 ---
 
 I'm a software engineer and a cyclist. I live in Berkeley, CA, and I work for
-[Wesabe](https://www.wesabe.com), an online personal finance manager, writing
-backend web services.
+[Yammer](http://www.yammer.com), an enterprise messaging service, as their
+message architect.
 
 Some things I believe:
 
