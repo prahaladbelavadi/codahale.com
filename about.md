@@ -5,7 +5,7 @@ title: about me
 
 I'm a software engineer and a cyclist. I live in Berkeley, CA, and I work for
 [Yammer](http://www.yammer.com), an enterprise messaging service, as their
-message architect.
+messaging architect.
 
 Some things I believe:
 
