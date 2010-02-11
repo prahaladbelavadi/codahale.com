@@ -6,7 +6,7 @@ title: projects
 Work
 ----
 
-I work at [Wesabe](https://www.wesabe.com), where I build a whole lot of things.
+I work at [Yammer](https://www.yammer.com), where I'm the Messaging Architect.
 
 
 Open Source
