@@ -195,16 +195,23 @@ This is, as you might imagine, rarely true.
 A Readjustment In Focus
 ----------------------------------
 
-I think part of the problem with practical interpretations of the CAP theorem is
-the rather nuanced read on partition tolerance. It's useful from the perspective
-of Gilbert and Lynch's proof, but in terms of building reliable systems it's far
-more helpful to stop focusing on *whether* things will go bad and instead focus
-on *what the system gives up* when things go bad. Because they will
-[go bad](blog.foursquare.com/2010/10/05/so-that-was-a-bummer/).
+I think part of the problem with practical interpretations of the CAP theorem,
+especially with Gilbert and Lynch's formulation, is the fact that most real
+distributed systems do not require atomic consistency or perfect availability
+and will never be called upon to perform on a network suffering from arbitrary
+message loss. Consistency, Availability, and Partition Tolerance are the
+Platonic ideals of a distributed system--we can partake of them enough to meet
+business requirements, but the nature of reality is such that there will always
+be compromises.
 
-So instead of CAP, I think we should focus on an earlier bit of Brewer wisdom:
-**yield** and **harvest**, which come from Fox and Brewer's "Harvest, Yield, and
-Scalable Tolerant Systems"[<sup>4</sup>](#ft4).
+When it comes to designing or evaluating distributed systems, then, I think we
+should focus less on which two of the three Virtues we like most and more on
+what compromises a system makes as things go bad. (Because they will
+[go bad](blog.foursquare.com/2010/10/05/so-that-was-a-bummer/).)
+
+This brings us to an earlier bit of Brewer wisdom: **yield** and **harvest**,
+which come from Fox and Brewer's "Harvest, Yield, and Scalable Tolerant
+Systems"[<sup>4</sup>](#ft4).
 
 > We assume that clients make queries to servers, in which case there are at
 > least two metrics for correct behavior: **yield**, which is the probability of
@@ -249,8 +256,8 @@ recent version of a document that it could find, even if it knew there was a
 probability that it was not the most recent version it had stored.
 
 
-Favoring Yield Or Harvest
--------------------------
+A Better Heuristic
+------------------
 
 Whether a system favors yield or harvest (or is even *capable* of reducing
 harvest) tends to be an outcome of its design.
@@ -263,22 +270,13 @@ As Brewer puts it[<sup>5</sup>](#ft5):
 > reduced harvest, as parts of the database temporarily disappear, but the
 > capacity in queries per second remains the same.
 
-
-A Better Heuristic
-------------------
-
 In terms of general advice to people building distributed systems (and really,
 who isn't these days?), I think the following is far more effective:
 
-> **In the presence of faults, at some point you will need to either reduce
-> yield (i.e., stop answering requests) or reduce harvest (i.e., give incomplete
-> answers). Which strategy you choose should be about your business
-> requirements.**
-
-Of course, any decent system should also be fault-tolerant. Both strongly
-consistent models like Paxos and highly available models like Dynamo can
-withstand the loss of a certain number of nodes, but at some point every system
-will have to make a choice between preserving yield and preserving harvest.
+> **Despite your best efforts, your system will experience enough faults that it
+> will have to make a choice between reducing yield (i.e., stop answering
+> requests) and reducing harvest (i.e., giving answers based on incomplete
+> data). This decision should be based on business requirements.**
 
 
 Well Now What
@@ -324,6 +322,5 @@ References (i.e., Things You Should Read)
 5. Brewer. [Lessons from giant-scale services.](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.83.4274&rep=rep1&type=pdf)
    Internet Computing, IEEE (2001) vol. 5 (4) pp. 46 - 55 <a id="ft5" />
 
-(As a sad postscript: all of the theoretical papers I've referenced are about a
-decade old and freely available online. The cutting edge of blogs is arguing
-about topics which bore the tits off the actual researchers involved.)
+(As a sad postscript: most of the theoretical papers I've referenced are about a
+decade old and all of them are freely available online.)
