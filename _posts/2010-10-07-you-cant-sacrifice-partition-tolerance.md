@@ -79,7 +79,7 @@ Once more, Gilbert and Lynch[<sup>2</sup>](#ft2):
 
 > In order to model partition tolerance, the network will be allowed to lose
 > arbitrarily many messages sent from one node to another. When a network is
-> partitioned, all messages send from nodes in one component of the partition to
+> partitioned, all messages sent from nodes in one component of the partition to
 > nodes in another component are lost. (And any pattern of message loss can be
 > modeled as a temporary partition separating the communicating nodes at the
 > exact instant the message is lost.)
