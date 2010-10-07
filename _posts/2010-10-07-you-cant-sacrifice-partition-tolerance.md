@@ -207,7 +207,7 @@ be compromises.
 When it comes to designing or evaluating distributed systems, then, I think we
 should focus less on which two of the three Virtues we like most and more on
 what compromises a system makes as things go bad. (Because they will
-[go bad](blog.foursquare.com/2010/10/05/so-that-was-a-bummer/).)
+[go bad](http://blog.foursquare.com/2010/10/05/so-that-was-a-bummer/).)
 
 This brings us to an earlier bit of Brewer wisdom: **yield** and **harvest**,
 which come from Fox and Brewer's "Harvest, Yield, and Scalable Tolerant
