@@ -4,8 +4,8 @@ title: about me
 ---
 
 I'm a software engineer and a cyclist. I live in Emeryville, CA, and I work for
-[Yammer](http://www.yammer.com), an enterprise messaging service, as their
-messaging architect.
+[Yammer](http://www.yammer.com), an enterprise social network, as their
+infrastructure architect.
 
 Some things I believe:
 
