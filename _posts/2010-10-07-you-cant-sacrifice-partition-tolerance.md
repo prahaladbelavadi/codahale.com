@@ -303,7 +303,6 @@ system will sacrifice when failures happen.
 References (i.e., Things You Should Read)
 -----------------------------------------
 
-
 1. Brewer. [Towards robust distributed systems.](http://www.cs.berkeley.edu/~brewer/cs262b-2004/PODC-keynote.pdf)
    Proceedings of the Annual ACM Symposium on Principles of Distributed
    Computing (2000) vol. 19 pp. 7-10 <a id="ft1" />
@@ -324,3 +323,9 @@ References (i.e., Things You Should Read)
 
 (As a sad postscript: most of the theoretical papers I've referenced are about a
 decade old and all of them are freely available online.)
+
+
+Updated October 8, 2010
+-----------------------
+
+Dr. Brewer [approves](http://twitter.com/eric_brewer/status/26819094612).
