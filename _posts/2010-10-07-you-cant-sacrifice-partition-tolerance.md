@@ -96,9 +96,12 @@ Network partitions aren't limited to dropped packets: a crashed server can be
 thought of as a network partition. The failed node is effectively the only
 member of its partition component, and thus all messages to it are "lost" (i.e.,
 they are not processed by the node due to its failure). Handling a crashed
-machine counts as partition-tolerance. (N.B.: A node which has gone offline is
-actually the easiest sort of failure to deal with—you're assured that the dead
-node is not giving incorrect responses to another component of your system.)
+machine counts as partition-tolerance.
+(**Update: I was wrong about this part. See [this](#errata10221010) for more.**)
+(N.B.: A node which has gone offline is actually the easiest sort of failure to
+deal with—you're assured that the dead node is not giving incorrect responses to
+another component of your system.)
+
 
 For a distributed (i.e., multi-node) system to **not** require
 partition-tolerance it would have to run on a network which is *guaranteed to
@@ -319,7 +322,7 @@ References (i.e., Things You Should Read)
    (1999) pp. 174 - 178 <a id="ft4" />
 
 5. Brewer. [Lessons from giant-scale services.](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.83.4274&rep=rep1&type=pdf)
-   Internet Computing, IEEE (2001) vol. 5 (4) pp. 46 - 55 <a id="ft5" />
+   Internet Computing, IEEE (2001) vol. 5 (4) pp. 46 - 55 <a id="ft5"></a>
 
 (As a sad postscript: most of the theoretical papers I've referenced are about a
 decade old and all of them are freely available online.)
@@ -328,10 +331,64 @@ decade old and all of them are freely available online.)
 Updated October 8, 2010
 -----------------------
 
-Dr. Brewer [approves](http://twitter.com/eric_brewer/status/26819094612).
+Dr. Brewer [approves](http://twitter.com/eric_brewer/status/26819094612) (somewhat).
 
 
 Updated October 21, 2010
 ------------------------
 
-Dr. Stonebraker [does not approve](http://voltdb.com/blog/clarifications-cap-theorem-and-data-related-errors).
+Dr. Stonebraker [does not approve](http://voltdb.com/blog/clarifications-cap-theorem-and-data-related-errors) (somehwat).
+
+
+Updated October 22, 2010
+------------------------
+
+<a id="errata10221010"></a>In his response, Dr. Stonebraker says:
+
+> In Coda’s view, the dead node is in one partition and the remaining N-1 nodes
+> are in the other one.  The guidance from the CAP theorem is that you must
+> choose either A or C, when a network partition is present.  As is obvious in
+> the real world, it is possible to achieve both C and A in this failure mode.
+> You simply failover to a replica in a transactionally consistent way. Notably,
+> at least Tandem and Vertica have been doing exactly this for years. Therefore,
+> considering a node failure as a partition results in an obviously
+> inappropriate CAP theorem conclusion.
+
+He is correct: a dead (or wholly partitioned) node can receive no requests, and
+so the other nodes can easily compensate without compromising consistency or
+availability here. My error lies in forgetting that Gilbert and Lynch's
+formulation of availability requires only non-failing nodes to respond, and that
+without ≥1 live nodes in a partition there isn't the option for split-brain
+syndrome. I regret the error and thank both him and Dr. Brewer for pointing this
+out.
+
+That said, Dr. Stonebraker's assertion that "surviving [partitions] will not
+'move the needle' on availability because higher frequency events will cause
+global outages" is wrong. Multi-node failures may be rarer than single-node
+failures, but they are still common enough to have serious effects on business.
+In my limited experience I've dealt with long-lived network partitions in a
+single data center (DC), PDU failures, switch failures, accidental power cycles
+of whole racks, whole-DC backbone failures, whole-DC power failures, and a
+hypoglycemic driver smashing his Ford pickup truck into a DC's HVAC system. And
+I'm not even an ops guy.
+
+The fact of the matter is that most real-world systems require substantially
+less in the way of consistency guarantees than they do in the way of
+availability guarantees. Amazon's shopping carts, for example, do not require
+the full ACID treatment, nor do Twitter's timelines or Facebook's news feeds or
+Google's indexes. Even the canonical example of an isolated transaction--a
+transfer of funds between bank accounts--happens with a 24-hour window of
+indeterminacy. In fact, one of the few financial transactions which actually
+resembles a database transaction is the physical exchange of cash for goods--a
+totally analog experience.
+
+But whereas failures of consistency are tolerated or even expected, just about
+every failure of availability means lost money. Every failed Google search means
+fewer ads served and advertisers charged; every item a user can't add to their
+shopping cart means fewer items sold; every unprocessed credit charge risks a
+regulatory fine. The choice of availability over consistency is a business
+choice, not a technical one.
+
+Given this economic context, it becomes clear why most practitioners at any
+interesting scale meet their business needs using highly-available, eventually
+consistent systems.
