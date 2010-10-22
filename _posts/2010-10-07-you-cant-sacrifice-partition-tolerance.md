@@ -329,3 +329,9 @@ Updated October 8, 2010
 -----------------------
 
 Dr. Brewer [approves](http://twitter.com/eric_brewer/status/26819094612).
+
+
+Updated October 21, 2010
+------------------------
+
+Dr. Stonebraker [does not approve](http://voltdb.com/blog/clarifications-cap-theorem-and-data-related-errors).
