@@ -11,7 +11,7 @@ Use [bcrypt](http://github.com/codahale/bcrypt-ruby).
 Use [bcrypt](http://pypi.python.org/pypi/py-bcrypt/).
 Use [bcrypt](http://derekslager.com/blog/posts/2007/10/bcrypt-dotnet-strong-password-hashing-for-dotnet-and-mono.ashx).
 Use [bcrypt](http://www.mindrot.org/projects/jBCrypt/).
-Use [bcrypt](http://search.cpan.org/~zefram/Crypt-Eksblowfish-0.007/lib/Crypt/Eksblowfish/Bcrypt.pm).
+Use [bcrypt](http://p3rl.org/Authen::Passphrase::BlowfishCrypt).
 Use [bcrypt](http://www.openwall.com/crypt/).
 Use [bcrypt](http://www.openwall.com/phpass/).
 Use [bcrypt](http://github.com/skarab/erlang-bcrypt).
