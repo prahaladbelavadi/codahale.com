@@ -78,3 +78,21 @@ tl;dr
 -----
 
 **Use `bcrypt`.**
+
+
+Updated February 24th, 2011
+---------------------------
+
+I've been getting pretty regular emails about this article for the past year, and I figured I'd address some of the concerns here rather than have the same conversations over and over again.
+
+> Isn't `bcrypt` just Blowfish? Where do you store the password?
+
+Please read the [Provos & Mazières paper](http://www.usenix.org/events/usenix99/provos.html). `bcrypt` is an adaptive password hashing algorithm which uses the Blowfish keying schedule, not a symmetric encryption algorithm.
+
+> You said salts aren't helpful, but what about rainbow tables? Why would you suggest people not use salts?
+
+As the [Provos & Mazières paper](http://www.usenix.org/events/usenix99/provos.html) describes, `bcrypt` has salts built-in to prevent rainbow table attacks. So I'm not saying salts are without purpose, I'm saying that they don't prevent dictionary or brute force attacks (which they don't).
+
+Rainbow tables, despite their recent popularity as a subject of blog posts, have not aged gracefully. CUDA/OpenCL implementations of password crackers can leverage the massive amount of parallelism available in GPUs, peaking at [billions of candidate passwords a second](http://www.golubev.com/hashgpu.htm). You can literally test all lowercase, alphabetic passwords which are ≤7 characters in less than 2 seconds. And you can now rent the hardware which makes this possible to the tune of [less than $3/hour](http://aws.amazon.com/ec2/#pricing). For about $300/hour, you could crack around 500,000,000,000 candidate passwords a second.
+
+Given this massive shift in the economics of cryptographic attacks, it simply doesn't make sense for anyone to waste terabytes of disk space in the hope that their victim didn't use a salt. It's a lot easier to just crack the passwords. Even a "good" hashing scheme of `SHA256(salt + password)` is still completely vulnerable these cheap and effective attacks, thus the importance of an adaptive hashing algorithm like `bcrypt`.
