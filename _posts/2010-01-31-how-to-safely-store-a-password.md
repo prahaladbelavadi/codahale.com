@@ -7,14 +7,14 @@ Use `bcrypt`
 ------------
 
 Use [bcrypt](http://www.usenix.org/events/usenix99/provos.html).
-Use [bcrypt](http://github.com/codahale/bcrypt-ruby).
+Use [bcrypt](https://github.com/codahale/bcrypt-ruby).
 Use [bcrypt](http://pypi.python.org/pypi/py-bcrypt/).
 Use [bcrypt](http://derekslager.com/blog/posts/2007/10/bcrypt-dotnet-strong-password-hashing-for-dotnet-and-mono.ashx).
 Use [bcrypt](http://www.mindrot.org/projects/jBCrypt/).
 Use [bcrypt](http://p3rl.org/Authen::Passphrase::BlowfishCrypt).
 Use [bcrypt](http://www.openwall.com/crypt/).
 Use [bcrypt](http://www.openwall.com/phpass/).
-Use [bcrypt](http://github.com/skarab/erlang-bcrypt).
+Use [bcrypt](https://github.com/smarkets/erlang-bcrypt).
 
 
 Why Not {`MD5`, `SHA1`, `SHA256`, `SHA512`, `SHA-3`, etc}?
