@@ -14,3 +14,4 @@ p code, li>code { background-color:#EEEEFF; border:1px solid #DDDDDD; font-size:
 code, pre { font-family: "Menlo", "Consolas", "Inconsolata", "Anonymous", "Monaco", monospace;  }
 pre { border-left: 3px solid #DEDEDE; padding-left: 5px; }
 #call-to-action, #discussion-blurb { font-size: 70%; }
+#call-to-action ul { width: 60em; }
