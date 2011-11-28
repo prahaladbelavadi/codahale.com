@@ -1,5 +1,5 @@
 ---
-title: You Can't Sacrifice Partition Tolerance
+title: You Can’t Sacrifice Partition Tolerance
 layout: post
 ---
 
@@ -32,7 +32,7 @@ On Consistency
 From Gilbert and Lynch[<sup>2</sup>](#ft2):
 
 > Atomic, or linearizable, consistency is the condition expected by most web
-> services today. Under this consistency guarantee, there must exist a total 
+> services today. Under this consistency guarantee, there must exist a total
 > order on all operations such that each operation looks as if it were completed
 > at a single instant. This is equivalent to requiring requests of the
 > distributed shared memory to act as if they were executing on a single node,
@@ -254,7 +254,7 @@ In other words:
 *harvest = data available/complete data*
 
 Another example would be a system which stores versions of documents. In the
-event that some nodes are down, the system could choose to present the most 
+event that some nodes are down, the system could choose to present the most
 recent version of a document that it could find, even if it knew there was a
 probability that it was not the most recent version it had stored.
 
@@ -295,7 +295,7 @@ describing their systems as logical impossibilities.
 tl;dr
 -----
 
-Of the CAP theorem's Consistency, Availability, and Partition Tolerance, 
+Of the CAP theorem's Consistency, Availability, and Partition Tolerance,
 Partition Tolerance is mandatory in distributed systems. You cannot **not**
 choose it. Instead of CAP, you should think about your availability in terms of
 *yield* (percent of requests answered successfully) and *harvest* (percent of
