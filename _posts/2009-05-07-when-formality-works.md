@@ -54,14 +54,21 @@ For example, Rack.
 ------------------
 
 One of the more exciting things to have happened in the Ruby web development
-community is [Rack](http://rack.rubyforge.org/). It's not a very sexy project --
-one can't claim to be a web framework middleware ninja--but it has an
+community is [Rack](http://rack.rubyforge.org/). It's not a very sexy
+project--one can't claim to be a web framework middleware ninja--but it has an
 incredible amount of utility: it's standardized the interface between web
 application containers--[Mongrel](http://mongrel.rubyforge.org/),
-[Thin](http://code.macournoyer.com/thin/), [Ebb](http://ebb.rubyforge.org/),
-[Passenger](http://www.modrails.com/), [Glassfish, Jetty, Tomcat, JBoss, SpringSource, Google App Engine](http://kenai.com/projects/jruby-rack/pages/Home),
-[WEBrick](http://github.com/chneukirchen/rack/blob/d221938a6401d956ac6cfdc892f9b1c11b1fa31a/lib/rack/handler/webrick.rb), [LiteSpeed](http://litespeedtech.com/), [Fuzed](http://github.com/KirinDave/fuzed/tree/master), [CGI](http://github.com/chneukirchen/rack/blob/d221938a6401d956ac6cfdc892f9b1c11b1fa31a/lib/rack/handler/cgi.rb), [FastCGI](http://github.com/chneukirchen/rack/blob/d221938a6401d956ac6cfdc892f9b1c11b1fa31a/lib/rack/handler/fastcgi.rb), [SCGI](http://github.com/chneukirchen/rack/blob/d221938a6401d956ac6cfdc892f9b1c11b1fa31a/lib/rack/handler/scgi.rb), [EventedMongrel, SwiftipliedMongrel](http://swiftiply.swiftcore.org/mongrel.html)
--- and Ruby web applications.
+[Thin](http://code.macournoyer.com/thin/),
+[Ebb](http://ebb.rubyforge.org/),
+[Passenger](http://www.modrails.com/),
+[Glassfish, Jetty, Tomcat, JBoss, SpringSource, Google App Engine](http://kenai.com/projects/jruby-rack/pages/Home),
+[WEBrick](http://github.com/chneukirchen/rack/blob/d221938a6401d956ac6cfdc892f9b1c11b1fa31a/lib/rack/handler/webrick.rb),
+[LiteSpeed](http://litespeedtech.com/),
+[Fuzed](http://github.com/KirinDave/fuzed/tree/master),
+[CGI](http://github.com/chneukirchen/rack/blob/d221938a6401d956ac6cfdc892f9b1c11b1fa31a/lib/rack/handler/cgi.rb),
+[FastCGI](http://github.com/chneukirchen/rack/blob/d221938a6401d956ac6cfdc892f9b1c11b1fa31a/lib/rack/handler/fastcgi.rb),
+[SCGI](http://github.com/chneukirchen/rack/blob/d221938a6401d956ac6cfdc892f9b1c11b1fa31a/lib/rack/handler/scgi.rb),
+[EventedMongrel, SwiftipliedMongrel](http://swiftiply.swiftcore.org/mongrel.html)--and Ruby web applications.
 
 Thanks to Rack's acceptance, you write a web application to work with a minimal
 interface and deploy it on a wide variety of infrastructure without needing to
