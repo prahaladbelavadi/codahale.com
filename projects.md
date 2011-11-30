@@ -6,7 +6,8 @@ title: projects
 Work
 ----
 
-I work at [Yammer](https://www.yammer.com), where I'm the Messaging Architect.
+I work at [Yammer](https://www.yammer.com), where I'm the Infrastructure 
+Architect.
 
 
 Open Source
