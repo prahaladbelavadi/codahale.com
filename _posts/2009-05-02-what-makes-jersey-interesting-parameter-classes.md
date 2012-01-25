@@ -105,7 +105,7 @@ And our resource class responds with:
     20060714 is on a ???.
 
 This isn't much more complicated than `HelloWorldResource`; we're still in
-could-be-crap-but-looks-good-on-a-slice territory. So let's add the guts of the
+could-be-crap-but-looks-good-on-a-slide territory. So let's add the guts of the
 resource--date parsing and weekday calculation. Because Java's `Calendar` and 
 `Date` classes are *hilariously* bad, I'm going to use 
 [Joda Time](http://joda-time.sourceforge.net/), which kicks ass.
