@@ -3,9 +3,7 @@ layout: static
 title: about me
 ---
 
-I'm a software engineer and a cyclist. I live in Berkeley, CA, and I work  for
-[Yammer](http://www.yammer.com), the enterprise social network, as their
-infrastructure architect.
+I'm a software engineer in Berkeley, CA.
 
 Some things I believe:
 
