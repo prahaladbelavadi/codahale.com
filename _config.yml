@@ -1,6 +1,7 @@
 permalink: /:title/
 pygments: true
 markdown: rdiscount
-lsi: true
+name: codahale.com
 rdiscount:
-  extensions: [:smart]
+  extensions:
+    - smart
