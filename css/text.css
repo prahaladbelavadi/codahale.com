@@ -10,8 +10,6 @@ h1 a, h2 a { text-decoration: none; }
 p, ul, ol { width: 30em; margin-left: 5px; }
 p.date { font-style: italic; margin-top: 0; font-size: small; }
 small { font-size: 70%; }
-p code, li>code { background-color:#EEEEFF; border:1px solid #DDDDDD; font-size:95%; padding:0 0.2em; }
-code, pre { font-family: "Menlo", "Consolas", "Inconsolata", "Anonymous", "Monaco", monospace;  }
-pre { border-left: 3px solid #DEDEDE; padding-left: 5px; }
+
 #call-to-action, #discussion-blurb { font-size: 70%; }
 #call-to-action ul { width: 60em; }

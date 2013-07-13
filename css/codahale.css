@@ -1,0 +1,21 @@
+#header h1 {
+    font-size: 120%;
+    display: inline-block;
+}
+
+#header h1 a, h2.post-title a, h2.static-title a {
+    color: #000;
+}
+
+ul, ol {
+    margin-left: 2em;
+}
+
+div.highlight {
+    margin-bottom: 1em;
+}
+
+code.has-jax {
+    border: none;
+    background-color: #fff;
+}

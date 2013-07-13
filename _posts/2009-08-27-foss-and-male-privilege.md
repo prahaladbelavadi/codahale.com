@@ -6,8 +6,7 @@ layout: post
 From the comments on the LWN thread,
 [FSF to host a mini-summit on Women in Free Software](http://lwn.net/Articles/348459/):
 
-Bruce Perens
-------------
+## Bruce Perens
 
 > Can we say that women aren't joining because they, as a population rather than
 > as individuals, are not interested? The other alternative would be to say that
@@ -22,8 +21,7 @@ Bruce Perens
 > were interested were barred from participating with almost total
 > effectiveness. And why this was not so for a number of other fields.
 
-Skud
-----
+## Skud
 
 > Bruce, I started using Linux in 1993 with slackware installed off a stack of
 > floppies. I ran X with fvwm and kermit for dialup Internet. I learnt Perl a
@@ -54,31 +52,23 @@ Skud
 > Fuck that. Follow some of those funny little blue underlined words and DO SOME
 > READING.
 
-
-Bruce Perens
-------------
+## Bruce Perens
 
 > OK, I'm going to guess that you might be Yuwei Lin, and that you are a woman.
 
-
-Skud
-----
+## Skud
 
 > Bruce, I am Kirrily Robert, as a [*trivial* search](http://lmgtfy.com/?q=skud)
 > would have told you, if we hadn't met in person on multiple occasions.
 
-
-Bruce Perens
-------------
+## Bruce Perens
 
 > Oh, sorry. I just went by who came up in the first half page of google
 > searches for
 > [women in Open Source](http://lmgtfy.com/?q=women+in+Open+Source). Lyn comes
 > up first here.
 
-
-tl;dr
------
+## tl;dr
 
 Bruce Perens demonstrates one of the "established mechanisms which [are]
 astonishingly effective at keeping [women] out" of the FOSS community. The irony

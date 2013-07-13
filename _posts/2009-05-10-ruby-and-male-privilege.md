@@ -3,8 +3,7 @@ title: Ruby and Male Privilege
 layout: post
 ---
 
-Act One
--------
+## Act One
 
 I read this today:
 
@@ -32,8 +31,7 @@ content to purchase a tape of Pearl Jam's *Ten* from the local record store.
 *A tape.*
 
 
-Act Two
--------
+## Act Two
 
 On April 18th, 2009, Matt Aimonetti gave a presentation on CouchDB entitled
 *CouchDB: Perform Like A Pr0n Star*.
@@ -43,8 +41,7 @@ On April 18th, 2009, Matt Aimonetti gave a presentation on CouchDB entitled
 You can [see the rest of the slides here](http://www.slideshare.net/mattetti/couchdb-perform-like-a-pr0n-star).
 
 
-Intermission
-------------
+## Intermission
 
 In the **eighteen** intervening years, what's changed?
 
@@ -57,8 +54,7 @@ Here's another one: when she graduates in 2013, what will have changed for that
 freshman?
 
 
-Act Three
----------
+## Act Three
 
 A few days ago, I noticed this exchange on Twitter:
 
@@ -71,8 +67,7 @@ Hansson, creator of Rails:
 
 Ladies and gentlemen, the leading lights of the Ruby community.
 
-tl;dr
------
+## tl;dr
 
 Read [Why Are There So Few Female Computer Scientists](http://people.mills.edu/spertus/Gender/pap/pap.html) and
 [HOWTO Encourage Women In Linux](http://www.tldp.org/HOWTO/Encourage-Women-Linux-HOWTO/). And honestly,

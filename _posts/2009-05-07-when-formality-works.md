@@ -23,8 +23,7 @@ thoughtleaders.)
 But I have an important nit to pick.
 
 
-That's not how the JSR model works.
------------------------------------
+### That's not how the JSR model works.
 
 Java programmers don't sit around feeling helpless waiting for *JSR-9918: Doing
 That Thing You Get Paid To Do* to be finalized. Instead, they haul off and
@@ -50,8 +49,7 @@ people can take for granted. Once they can take it for granted, they can begin
 to focus on other things.
 
 
-For example, Rack.
-------------------
+### For example, Rack.
 
 One of the more exciting things to have happened in the Ruby web development
 community is [Rack](http://rack.rubyforge.org/). It's not a very sexy
@@ -77,8 +75,7 @@ between your web server and your web application. You can then spend time doing
 other things, *like caring about your actual web application.*
 
 
-Why did Rack succeed?
----------------------
+### Why did Rack succeed?
 
 Rack succeeded because it has a [spec](http://rack.rubyforge.org/doc/SPEC.html),
 a [reference implementation](http://github.com/rack/rack/tree/master) and even
@@ -104,8 +101,7 @@ referring to these as "best practices." It's a good process and it obviously
 works.
 
 
-Ruby needs more of this.
-------------------------
+### Ruby needs more of this.
 
 The Ruby community has not had a great history of doing this.
 [Ruby Change Requests](http://rcrchive.net/), a mechanism for proposed changes
@@ -127,8 +123,7 @@ trying to build the fundamentals of interoperability without a spec and an open
 process is--like Ruby 1.8.7--bound to fail.
 
 
-tl;dr
------
+### tl;dr
 
 The path to success for a Ruby library and a JSR are the same: pick a problem
 where diversity of interface poses a problem, extract a common solution, get a

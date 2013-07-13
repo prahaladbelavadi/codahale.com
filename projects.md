@@ -3,16 +3,13 @@ layout: static
 title: projects
 ---
 
-Open Source
------------
+### Open Source
 
 You can find my open source projects on [GitHub](http://github.com/codahale).
 
+### Talks
 
-Talks
------
-
-### Metrics, Metrics Everywhere
+#### Metrics, Metrics Everywhere
 
 *If you don't measure it, you can't optimize it.* At GitHub's CodeConf in 2011, I
 spoke about Yammer's service-level performance metrics, how we used them to guide
@@ -24,7 +21,7 @@ Sadly, that talk wasn't recorded, but you can find the slides
 I ended up giving the talk again at Pivotal Labs a few months later, which
 [was recorded](http://www.youtube.com/watch?v=czes-oa0yik).
 
-### The Programming Ape
+#### The Programming Ape
 
 *Humans, you may have noticed, are not exactly rational.* And yet here we are,
 trying to get them to build software. It’s a bit of a mess. But there is some
@@ -37,7 +34,7 @@ to making money.
 
 [This talk was recorded](https://dl.dropboxusercontent.com/u/2744222/2012-04-10-The-Programming-Ape.mp4).
 
-### The Other Side Of Software Architecture
+#### The Other Side Of Software Architecture
 
 *Obviously, you care about the craft of programming.* You spend time honing your
 skills, refactoring your code, learning new techniques, and experimenting with

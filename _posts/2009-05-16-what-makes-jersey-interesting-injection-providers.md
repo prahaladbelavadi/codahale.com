@@ -30,8 +30,7 @@ modifying instance variables or partially mocking the class you're trying to
 test.
 
 
-So what's a better way of doing that?
--------------------------------------
+## So what's a better way of doing that?
 
 Jersey avoids this situation by injecting the required information into the 
 resource class:
@@ -68,8 +67,7 @@ What takes this feature from Neat to Indispensable is the fact that Jersey opens
 this infrastructure to you: it's easy to write your own injection providers to 
 peel arbitrary bits of an HTTP request off and inject them into your resources.
 
-1.. 2.. 3.. Example time!
--------------------------
+## 1.. 2.. 3.. Example time!
 
 As an easy example, let's take the request's locale, as determined by its
 `Accept-Language` header. Out of the box, Jersey gives us access to this via
@@ -96,8 +94,7 @@ uppercase, check out the Turkish language. The uppercase version of **i**
 (U+0131). It matters.
 </ins>
 
-Now make it uglier
-------------------
+## Now make it uglier
 
 In keeping with my "so what if it looks good on a slide" motif here, I'm also
 going to throw in error handling: what if the user doesn't specify a locale?
@@ -123,8 +120,7 @@ It would be nice to have the locale-selecting code in its own class, and to do
 that in the same way that our `HttpHeaders` instance was injected.
 
 
-I assume you have some kind of plan
------------------------------------
+## I assume you have some kind of plan
 
 In order to do that we'll need to write two things:
 
@@ -139,8 +135,7 @@ HTTP context into resource classes. The second responsibility is simple enough
 to not require a template base class.
 
 
-Ok, let's do it
----------------
+## Ok, let's do it
 
 Luckily for us, we can kill two birds with one stone and implement both
 complimentary responsibilities in a single class:
@@ -218,8 +213,7 @@ public void itReturnsAnUppercaseString() {
 But I don't think we're done yet.
 
 
-How many times you wanna write this thing
------------------------------------------
+## How many times you wanna write this thing
 
 Much like [parameter classes](/what-makes-jersey-interesting-parameter-classes),
 our code gets cleaner the more injection providers we write, so we need to 
@@ -280,8 +274,7 @@ Now both our resource class and our `LocaleProvider` are composed and testable.
 
 I love it when a plan comes together.
 
-tl;dr
------
+## tl;dr
 
 Jersey has an internal dependency injection system which allows you to write
 small, focused classes to extract aspects of an HTTP request--in our case, the

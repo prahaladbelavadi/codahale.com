@@ -10,8 +10,7 @@ work—to give an attacker with access to a Statistics 101 textbook a good solid
 grip on your application's guts.
 
 
-How the hell does that work?
-----------------------------
+## How the hell does that work?
 
 In short, a timing attack uses statistical analysis of how long it takes your
 application to do something in order to learn something about the data it's
@@ -43,8 +42,7 @@ throttle requests with bad session cookies?)—the random noise becomes a very
 predictable, normally distributed skew, leaving only the signal.
 
 
-Well that doesn't seem that bad
--------------------------------
+## Well that doesn't seem that bad
 
 Oh, but it is.
 
@@ -66,8 +64,7 @@ HMAC for that message *should be* is `A1`. Repeat the process for the remaining
 19 bytes, and all of a sudden I'm logged in as you.
 
 
-You can't possibly measure that, can you?
------------------------------------------
+## You can't possibly measure that, can you?
 
 Right about now, most people are thinking about the improbability of measuring
 the difference between two array comparisons in a web application, given all the
@@ -93,8 +90,7 @@ at a barely-perceptible 10 req/s.
 It's an attack which takes some planning and analysis, but it's viable.
 
 
-Well crap. Now what?
---------------------
+## Well crap. Now what?
 
 Instead of using a variable-time algorithm for comparing secrets, you should be
 using constant-time algorithms. Lawson recommends something like the following
@@ -128,8 +124,7 @@ public static boolean isEqual(byte[] a, byte[] b) {
 {% endhighlight %}
 
 
-Yay! Problem solved, right?
----------------------------
+## Yay! Problem solved, right?
 
 Oh, if only.
 
@@ -160,8 +155,7 @@ public static boolean isEqual(byte digesta[], byte digestb[]) {
 {% endhighlight %}
 
 
-Wait What
----------
+## Wait What
 
 Yep. Byte-by-byte comparison; returns on first inequality. Just what we don't
 need.
@@ -187,8 +181,7 @@ of the largest programming platforms there is. I can't tell if that's terrible
 or awesome.
 
 
-tl;dr
------
+## tl;dr
 
 Replace your usage of `MessageDigest.isEqual` with a constant-time algorithm,
 like the one above.
@@ -198,8 +191,7 @@ they knew either of these values?** If the answer is at all meaningful, use a
 constant-time algorithm to compare them.
 
 
-A Side Note
------------
+## A Side Note
 
 This would be substantially less of an issue if more cryptographic libraries had
 better encapsulation. An HMAC is *not* just a series of characters or bytes—why
@@ -207,8 +199,7 @@ treat it as such? Why have such a crucial piece of cryptography squirt out its
 state for others to man-handle?
 
 
-Thanks
-------
+## Thanks
 
 [Nate Lawson](http://www.root.org/~nate/)'s Keyczar find got me thinking about
 timing attacks in my own code. His
@@ -216,8 +207,7 @@ timing attacks in my own code. His
 required watching for everyone with access to a compiler.
 
 
-Updated August 13, 2009
------------------------
+## Updated August 13, 2009
 
 As [sophacles on Hacker News](http://news.ycombinator.com/item?id=761059)
 pointed out, I had overly refactored the suggested constant-time algorithms and
@@ -226,8 +216,7 @@ statement's boolean expression short-circuit. The algorithm has been updated to
 fix this.
 
 
-Updated December 3, 2009
-------------------------
+## Updated December 3, 2009
 
 The timing attack vulnerability in `MessageDigest` was fixed in
 [Java SE 6 Update 17](http://java.sun.com/javase/6/webnotes/6u17.html).
