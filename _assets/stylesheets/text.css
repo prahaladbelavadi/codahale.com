@@ -3,6 +3,10 @@
     display: inline-block;
 }
 
+code {
+    color: #000;
+}
+
 #header h1 a, h2.post-title a, h2.static-title a {
     color: #000;
 }
