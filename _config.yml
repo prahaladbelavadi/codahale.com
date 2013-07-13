@@ -5,3 +5,8 @@ name: codahale.com
 rdiscount:
   extensions:
     - smart
+assets:
+  compress:
+    css:  sass
+    js:   uglifier
+  cache: false
