@@ -5,6 +5,7 @@
 
 code {
     color: #000;
+    font-weight: normal;
 }
 
 #header h1 a, h2.post-title a, h2.static-title a {
@@ -15,7 +16,7 @@ ul, ol {
     margin-left: 2em;
 }
 
-div.highlight {
+div.highlight, pre {
     margin-bottom: 1em;
 }
 
