@@ -82,8 +82,8 @@ So. Almost microsecond resolution with hundreds to thousands of measurements.
 Who wants to bet that network jitter compensation models get worse instead of
 better?
 
-A worst-case scenario for guessing an HMAC would require 20 × 256 × `n`
-measurements, where `n` is the number of measurements required to pin down a
+A worst-case scenario for guessing an HMAC would require `\(20 \times 256 \times n\)`
+measurements, where `\(n\)` is the number of measurements required to pin down a
 single byte. So—around 5,000,000 requests. You could do that in less than a week
 at a barely-perceptible 10 req/s.
 
