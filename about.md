@@ -1,6 +1,6 @@
 ---
 layout: static
-title: about me
+title: about
 ---
 
 I'm a software engineer in Berkeley, CA.
