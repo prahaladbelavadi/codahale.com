@@ -2,3 +2,7 @@
 //= require foundation
 //= require pygment
 //= require text
+body {
+    background-image: url("/images/background.png");
+    background-repeat: repeat;
+}
