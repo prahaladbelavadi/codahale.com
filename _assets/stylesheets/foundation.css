@@ -90,7 +90,7 @@ select {
   margin-right: auto;
   margin-top: 0;
   margin-bottom: 0;
-  max-width: 62.5em;
+  max-width: 56em;
   *zoom: 1; }
   .row:before, .row:after {
     content: " ";
@@ -1021,62 +1021,3 @@ blockquote p {
 
   .show-for-print {
     display: inherit !important; } }
-/* Keystroke Characters */
-.keystroke,
-kbd {
-  background-color: #ededed;
-  border-color: #dbdbdb;
-  color: #222222;
-  border-style: solid;
-  border-width: 1px;
-  margin: 0;
-  font-family: "Consolas", "Menlo", "Courier", monospace;
-  font-size: 0.875em;
-  padding: 0.125em 0.25em 0em;
-  -webkit-border-radius: 3px;
-  border-radius: 3px; }
-
-/* Labels */
-.label {
-  font-weight: bold;
-  text-align: center;
-  text-decoration: none;
-  line-height: 1;
-  white-space: nowrap;
-  display: inline-block;
-  position: relative;
-  padding: 0.1875em 0.625em 0.25em;
-  font-size: 0.875em;
-  background-color: #2ba6cb;
-  color: white; }
-  .label.radius {
-    -webkit-border-radius: 3px;
-    border-radius: 3px; }
-  .label.round {
-    -webkit-border-radius: 1000px;
-    border-radius: 1000px; }
-  .label.alert {
-    background-color: #c60f13;
-    color: white; }
-  .label.success {
-    background-color: #5da423;
-    color: white; }
-  .label.secondary {
-    background-color: #e9e9e9;
-    color: #333333; }
-
-/* Inline Lists */
-.inline-list {
-  margin: 0 auto 1.0625em auto;
-  margin-left: -1.375em;
-  margin-right: 0;
-  padding: 0;
-  list-style: none;
-  overflow: hidden; }
-  .inline-list > li {
-    list-style: none;
-    float: left;
-    margin-left: 1.375em;
-    display: block; }
-    .inline-list > li > * {
-      display: block; }
