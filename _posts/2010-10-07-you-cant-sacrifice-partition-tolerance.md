@@ -10,7 +10,6 @@ I've seen a number of distributed databases recently
 partition-tolerance. To me, this indicates that the developers of these systems
 do not understand the the CAP theorem and its implications.
 
-
 ### A Quick Refresher
 
 In 2000, Dr. Eric Brewer gave a keynote at the *Proceedings of the Annual ACM
@@ -23,7 +22,6 @@ definition with an informal proof. As far as I can tell, it's been misunderstood
 ever since.
 
 So let's be clear on the terms we're using.
-
 
 ### On Consistency
 
@@ -47,7 +45,6 @@ universe simply does not permit it. So the goal here is to push the time
 resolutions at which the consistency breaks down to a point where we no longer
 notice it. Just don't try to act outside your own light cone…
 
-
 ### On Availability
 
 Again from Gilbert and Lynch[<sup>2</sup>](#ft2):
@@ -67,7 +64,6 @@ it in order to be processed cannot be handled.
 (N.B.: A `500 The Bees They're In My Eyes` response does not count as an actual
 response any more than a network timeout does. A response contains the results
 of the requested work.)
-
 
 ### On Partition Tolerance
 
@@ -98,13 +94,11 @@ machine counts as partition-tolerance.
 deal with—you're assured that the dead node is not giving incorrect responses to
 another component of your system.)
 
-
 For a distributed (i.e., multi-node) system to **not** require
 partition-tolerance it would have to run on a network which is *guaranteed to
 never drop messages* (or even deliver them late) and whose nodes are *guaranteed
 to never die*. You and I do not work with these types of systems because **they
 don't exist.**
-
 
 ### Given A System In Which Failure Is An Option
 
@@ -123,9 +117,9 @@ your failures are unrelated; in reality, they tend to cascade.)
 
 Therefore, the question you should be asking yourself is:
 
-> **In the event of failures, which will this system sacrifice? Consistency or
-> availability?**
-
+<div class="panel">
+In the event of failures, which will this system sacrifice? Consistency or availability?
+</div>
 
 ### Choosing Consistency Over Availability
 
@@ -140,7 +134,6 @@ of data whose "master" node is inside the partition component (like Membase).
 one) which are made much easier (or even possible) by strongly consistent
 systems. They are a perfectly valid type of tool for satisfying a particular set
 of business requirements.
-
 
 ### Choosing Availability Over Consistency
 
@@ -158,11 +151,12 @@ amenable to conflict resolution and for which stale reads are acceptable
 which unavailability results in massive bottom-line losses. (Amazon's shopping
 cart system is the canonical example of a Dynamo model[<sup>3</sup>](#ft3)).
 
-
 ### But Never Both
 
-**You cannot, however, choose both consistency and availability in a distributed
-system.**
+<div class="panel">
+You cannot, however, choose both consistency and availability in a distributed
+system.
+</div>
 
 As a thought experiment, imagine a distributed system which keeps track of a
 single piece of data using three nodes—`\(A\)`, `\(B\)`, and `\(C\)`—and which claims to be
@@ -189,7 +183,6 @@ different partition component ***magically***.
 
 This is, as you might imagine, rarely true.
 
-
 ### A Readjustment In Focus
 
 I think part of the problem with practical interpretations of the CAP theorem,
@@ -215,7 +208,6 @@ Systems"[<sup>4</sup>](#ft4).
 > completing a request, and **harvest**, which measures the fraction of the data
 > reflected in the response, i.e. the completeness of the answer to the query.
 
-
 ### On Yield
 
 In a later article[<sup>5</sup>](#ft5), Brewer expands on **yield** and its
@@ -229,7 +221,6 @@ uses:
 > same uptime, but vastly different yields because there might be an
 > order-of-magnitude difference in load between the peak second and the
 > minimum-load second. Thus we focus on yield rather than uptime.
-
 
 ### On Harvest
 
@@ -252,7 +243,6 @@ event that some nodes are down, the system could choose to present the most
 recent version of a document that it could find, even if it knew there was a
 probability that it was not the most recent version it had stored.
 
-
 ### A Better Heuristic
 
 Whether a system favors yield or harvest (or is even *capable* of reducing
@@ -269,11 +259,12 @@ As Brewer puts it[<sup>5</sup>](#ft5):
 In terms of general advice to people building distributed systems (and really,
 who isn't these days?), I think the following is far more effective:
 
-> **Despite your best efforts, your system will experience enough faults that it
-> will have to make a choice between reducing yield (i.e., stop answering
-> requests) and reducing harvest (i.e., giving answers based on incomplete
-> data). This decision should be based on business requirements.**
-
+<div class="panel">
+Despite your best efforts, your system will experience enough faults that it
+will have to make a choice between reducing yield (i.e., stop answering
+requests) and reducing harvest (i.e., giving answers based on incomplete
+data). This decision should be based on business requirements.
+</div>
 
 ### Well Now What
 
@@ -283,7 +274,6 @@ carts *cannot* go down" or "there would be no way for us to reconcile this
 later"). What I'd like to see, though, is far fewer people unknowingly
 describing their systems as logical impossibilities.
 
-
 ### tl;dr
 
 Of the CAP theorem's Consistency, Availability, and Partition Tolerance,
@@ -292,7 +282,6 @@ choose it. Instead of CAP, you should think about your availability in terms of
 *yield* (percent of requests answered successfully) and *harvest* (percent of
 required data actually included in the responses) and which of these two your
 system will sacrifice when failures happen.
-
 
 ### References (i.e., Things You Should Read)
 
@@ -317,16 +306,13 @@ system will sacrifice when failures happen.
 (As a sad postscript: most of the theoretical papers I've referenced are about a
 decade old and all of them are freely available online.)
 
-
 ### Updated October 8, 2010
 
 Dr. Brewer [approves](http://twitter.com/eric_brewer/status/26819094612) (somewhat).
 
-
 ### Updated October 21, 2010
 
 Dr. Stonebraker [does not approve](http://voltdb.com/blog/clarifications-cap-theorem-and-data-related-errors) (somehwat).
-
 
 ### Updated October 22, 2010
 

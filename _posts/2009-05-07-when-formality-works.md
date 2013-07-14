@@ -110,9 +110,11 @@ to design, plan, and implement "best practices"* regarding the Ruby language.
 
 Why?
 
-**Because trying to build a business on top of a Ruby interpreter in which
+<div class="panel">
+Because trying to build a business on top of a Ruby interpreter in which
 ruby-core is constantly trying out "small mutations" is really goddamn
-annoying.**
+annoying.
+</div>
 
 Not everything needs a spec--actually, *very few things need a spec.* But
 trying to build the fundamentals of interoperability without a spec and an open
