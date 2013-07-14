@@ -90,7 +90,7 @@ select {
   margin-right: auto;
   margin-top: 0;
   margin-bottom: 0;
-  max-width: 56em;
+  max-width: 52em;
   *zoom: 1; }
   .row:before, .row:after {
     content: " ";
