@@ -243,7 +243,9 @@ search, then, for "cute baby animals" which combined results from nodes `\(A\)`,
 might  return a result for just "cute animals," which would be a harvest of 66%.
 In other words:
 
-*harvest = data available/complete data*
+`\[
+harvest = \frac{data\ available}{total\ data}
+\]`
 
 Another example would be a system which stores versions of documents. In the
 event that some nodes are down, the system could choose to present the most

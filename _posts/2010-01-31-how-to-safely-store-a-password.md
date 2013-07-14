@@ -103,6 +103,6 @@ can now rent the hardware which makes this possible to the tune of
 
 Given this massive shift in the economics of cryptographic attacks, it simply doesn't make sense for
 anyone to waste terabytes of disk space in the hope that their victim didn't use a salt. It's a lot
-easier to just crack the passwords. Even a "good" hashing scheme of `SHA256(salt + password)` is
-still completely vulnerable to these cheap and effective attacks, thus the importance of an adaptive
-hashing algorithm like `bcrypt`.
+easier to just crack the passwords. Even a "good" hashing scheme of
+`\(SHA2_{256}(salt \| password)\)` is still completely vulnerable to these cheap and effective
+attacks, thus the importance of an adaptive hashing algorithm like `bcrypt`.
