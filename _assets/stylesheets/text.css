@@ -29,3 +29,11 @@ code.has-jax {
     font-style: italic;
     color: #4e4e4e;
 }
+
+body {
+    font: 300 1.1em/1.6em "Droid Serif", "Open Sans", Cambria, Georgia, "DejaVu Serif", serif;
+}
+
+blockquote {
+    padding-top: 0;
+}
