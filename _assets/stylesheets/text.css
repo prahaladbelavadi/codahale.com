@@ -24,3 +24,8 @@ code.has-jax {
     border: none;
     background-color: #fff;
 }
+
+.date {
+    font-style: italic;
+    color: #4e4e4e;
+}
