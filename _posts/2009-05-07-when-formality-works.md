@@ -22,7 +22,6 @@ thoughtleaders.)
 
 But I have an important nit to pick.
 
-
 ### That's not how the JSR model works.
 
 Java programmers don't sit around feeling helpless waiting for *JSR-9918: Doing
@@ -47,7 +46,6 @@ where innovation starts, it's where it ends. And that's as it should be.
 The whole point of a standard is to describe a fixed set of practices that
 people can take for granted. Once they can take it for granted, they can begin
 to focus on other things.
-
 
 ### For example, Rack.
 
@@ -74,7 +72,6 @@ write your own adapter code. You no longer need to care about the glue code
 between your web server and your web application. You can then spend time doing
 other things, *like caring about your actual web application.*
 
-
 ### Why did Rack succeed?
 
 Rack succeeded because it has a [spec](http://rack.rubyforge.org/doc/SPEC.html),
@@ -100,7 +97,6 @@ I'm not sure why Yehuda feels compelled to bring out the scare quotes when
 referring to these as "best practices." It's a good process and it obviously
 works.
 
-
 ### Ruby needs more of this.
 
 The Ruby community has not had a great history of doing this.
@@ -121,7 +117,6 @@ annoying.**
 Not everything needs a spec--actually, *very few things need a spec.* But
 trying to build the fundamentals of interoperability without a spec and an open
 process is--like Ruby 1.8.7--bound to fail.
-
 
 ### tl;dr
 

@@ -11,7 +11,7 @@ partition-tolerance. To me, this indicates that the developers of these systems
 do not understand the the CAP theorem and its implications.
 
 
-## A Quick Refresher
+### A Quick Refresher
 
 In 2000, Dr. Eric Brewer gave a keynote at the *Proceedings of the Annual ACM
 Symposium on Principles of Distributed Computing*[<sup>1</sup>](#ft1) in which
@@ -25,7 +25,7 @@ ever since.
 So let's be clear on the terms we're using.
 
 
-## On Consistency
+### On Consistency
 
 From Gilbert and Lynch[<sup>2</sup>](#ft2):
 
@@ -48,7 +48,7 @@ resolutions at which the consistency breaks down to a point where we no longer
 notice it. Just don't try to act outside your own light cone…
 
 
-## On Availability
+### On Availability
 
 Again from Gilbert and Lynch[<sup>2</sup>](#ft2):
 
@@ -69,7 +69,7 @@ response any more than a network timeout does. A response contains the results
 of the requested work.)
 
 
-## On Partition Tolerance
+### On Partition Tolerance
 
 Once more, Gilbert and Lynch[<sup>2</sup>](#ft2):
 
@@ -106,7 +106,7 @@ to never die*. You and I do not work with these types of systems because **they
 don't exist.**
 
 
-## Given A System In Which Failure Is An Option
+### Given A System In Which Failure Is An Option
 
 [Michael Stonebraker's assertions](http://voltdb.com/voltdb-webinar-sql-urban-myths)
 aside, partitions (read: failures) do happen, and the chances that any one of
@@ -127,7 +127,7 @@ Therefore, the question you should be asking yourself is:
 > availability?**
 
 
-## Choosing Consistency Over Availability
+### Choosing Consistency Over Availability
 
 If a system chooses to provide Consistency over Availability in the presence of
 partitions (again, read: failures), it will preserve the guarantees of its
@@ -142,7 +142,7 @@ systems. They are a perfectly valid type of tool for satisfying a particular set
 of business requirements.
 
 
-## Choosing Availability Over Consistency
+### Choosing Availability Over Consistency
 
 If a system chooses to provide Availability over Consistency in the presence
 of partitions (all together now: failures), it will respond to all requests,
@@ -159,7 +159,7 @@ which unavailability results in massive bottom-line losses. (Amazon's shopping
 cart system is the canonical example of a Dynamo model[<sup>3</sup>](#ft3)).
 
 
-## But Never Both
+### But Never Both
 
 **You cannot, however, choose both consistency and availability in a distributed
 system.**
@@ -190,7 +190,7 @@ different partition component ***magically***.
 This is, as you might imagine, rarely true.
 
 
-## A Readjustment In Focus
+### A Readjustment In Focus
 
 I think part of the problem with practical interpretations of the CAP theorem,
 especially with Gilbert and Lynch's formulation, is the fact that most real
@@ -216,7 +216,7 @@ Systems"[<sup>4</sup>](#ft4).
 > reflected in the response, i.e. the completeness of the answer to the query.
 
 
-## On Yield
+### On Yield
 
 In a later article[<sup>5</sup>](#ft5), Brewer expands on **yield** and its
 uses:
@@ -231,7 +231,7 @@ uses:
 > minimum-load second. Thus we focus on yield rather than uptime.
 
 
-## On Harvest
+### On Harvest
 
 **Harvest** is a far more overlooked metric, especially in the age of the
 relational database. If we imagine working on a search engine, however, we can
@@ -253,7 +253,7 @@ recent version of a document that it could find, even if it knew there was a
 probability that it was not the most recent version it had stored.
 
 
-## A Better Heuristic
+### A Better Heuristic
 
 Whether a system favors yield or harvest (or is even *capable* of reducing
 harvest) tends to be an outcome of its design.
@@ -275,7 +275,7 @@ who isn't these days?), I think the following is far more effective:
 > data). This decision should be based on business requirements.**
 
 
-## Well Now What
+### Well Now What
 
 It's incredibly unlikely this will change the way people will build distributed
 systems—far more of our motivation comes from business concerns ("our shopping
@@ -284,7 +284,7 @@ later"). What I'd like to see, though, is far fewer people unknowingly
 describing their systems as logical impossibilities.
 
 
-## tl;dr
+### tl;dr
 
 Of the CAP theorem's Consistency, Availability, and Partition Tolerance,
 Partition Tolerance is mandatory in distributed systems. You cannot **not**
@@ -294,7 +294,7 @@ required data actually included in the responses) and which of these two your
 system will sacrifice when failures happen.
 
 
-## References (i.e., Things You Should Read)
+### References (i.e., Things You Should Read)
 
 1. Brewer. [Towards robust distributed systems.](http://www.cs.berkeley.edu/~brewer/cs262b-2004/PODC-keynote.pdf)
    Proceedings of the Annual ACM Symposium on Principles of Distributed
@@ -318,17 +318,17 @@ system will sacrifice when failures happen.
 decade old and all of them are freely available online.)
 
 
-## Updated October 8, 2010
+### Updated October 8, 2010
 
 Dr. Brewer [approves](http://twitter.com/eric_brewer/status/26819094612) (somewhat).
 
 
-## Updated October 21, 2010
+### Updated October 21, 2010
 
 Dr. Stonebraker [does not approve](http://voltdb.com/blog/clarifications-cap-theorem-and-data-related-errors) (somehwat).
 
 
-## Updated October 22, 2010
+### Updated October 22, 2010
 
 <a id="errata10221010"></a>In his response, Dr. Stonebraker says:
 

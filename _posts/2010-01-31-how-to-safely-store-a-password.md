@@ -3,7 +3,7 @@ title: How To Safely Store A Password
 layout: post
 ---
 
-## Use `bcrypt`
+### Use `bcrypt`
 
 Use [bcrypt](http://www.usenix.org/events/usenix99/provos.html).
 Use [bcrypt](https://github.com/codahale/bcrypt-ruby).
@@ -15,8 +15,7 @@ Use [bcrypt](http://www.openwall.com/crypt/).
 Use [bcrypt](http://www.openwall.com/phpass/).
 Use [bcrypt](https://github.com/smarkets/erlang-bcrypt).
 
-
-## Why Not {`MD5`, `SHA1`, `SHA256`, `SHA512`, `SHA-3`, etc}?
+### Why Not {`MD5`, `SHA1`, `SHA256`, `SHA512`, `SHA-3`, etc}?
 
 These are all *general purpose* hash functions, designed to calculate a digest
 of huge amounts of data in as short a time as possible. This means that they are
@@ -38,8 +37,7 @@ own little supercomputer cluster which will let you
 And that rate you'll be cracking those passwords at the rate of more than **one
 per second.**
 
-
-## Salts Will Not Help You
+### Salts Will Not Help You
 
 It's important to note that **salts are useless for preventing dictionary
 attacks or brute force attacks.** You can use huge salts or many salts or
@@ -50,8 +48,7 @@ hash and the salt from your database.
 Salt or no, if you're using a general-purpose hash function designed for speed
 you're well and truly effed.
 
-
-## `bcrypt` Solves These Problems
+### `bcrypt` Solves These Problems
 
 How? Basically, it's slow as hell. It uses a variant of the Blowfish
 encryption algorithm's keying schedule, and introduces a *work factor*, which
@@ -69,13 +66,11 @@ passwords might not need that kind of security and you might need a faster
 comparison algorithm, but `bcrypt` allows you to choose your balance of speed
 and security. Use it.
 
-
-## tl;dr
+### tl;dr
 
 **Use `bcrypt`.**
 
-
-## Updated February 24th, 2011
+### Updated February 24th, 2011
 
 I've been getting pretty regular emails about this article for the past year, and I figured I'd
 address some of the concerns here rather than have the same conversations over and over again.

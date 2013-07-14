@@ -7,8 +7,7 @@ For folks who have known me for a while, this may come as a bit of a shock:
 these days I'm spending a *lot* of time working with Java. And I'm having a 
 *lot* of fun.
 
-
-## lol wut
+### lol wut
 
 No really.
 
@@ -16,8 +15,7 @@ This is due in no small part to the fact that I'm working on writing RESTful
 web services using a really neat framework: 
 [Jersey](https://jersey.dev.java.net/).
 
-
-## What Is This Jersey You Speak Of
+### What Is This Jersey You Speak Of
 
 Jersey is the reference implementation  of 
 [JSR311](https://jsr311.dev.java.net/), which is the Java community's incredibly 
@@ -66,8 +64,7 @@ and it tells you what day of the week the day was (or will be) on. Not
 super-useful, sure, but my boss won't let me paste huge chunks of our source 
 code here; you'll have to settle for a contrived example.
 
-
-## Round One: The Simplest Thing Possible
+### Round One: The Simplest Thing Possible
 
 The first thing I'll do is sketch out a skeleton resource class. Here's a first
 swing:
@@ -107,8 +104,7 @@ resource--date parsing and weekday calculation. Because Java's `Calendar` and
 `Date` classes are *hilariously* bad, I'm going to use 
 [Joda Time](http://joda-time.sourceforge.net/), which kicks ass.
 
-
-## Round Two: Now Make It Work
+### Round Two: Now Make It Work
 
 {% highlight java %}
 @Path("/v2/weekday/{date}")
@@ -144,8 +140,7 @@ And then:
 But this could still be a Potemkin application. So let's do something you 
 rarely see in slide shows. Let's throw some bad input at it.
 
-
-## Round Three: Oh Yeah, Error Handling
+### Round Three: Oh Yeah, Error Handling
 
 What happens when someone asks for an invalid date?
 
@@ -221,7 +216,7 @@ of copying and pasting and testing the error handling and bugs, bugs, bugs.
 
 Here's where Jersey starts to shine--separation of concerns.
 
-## Round Four: Time To Clean
+### Round Four: Time To Clean
 
 The trick here is to stop accepting `String`s and start dealing with 
 domain-specific objects. We can do that easily due to the way that Jersey 
@@ -307,10 +302,9 @@ worth noting:
   `500 THE BEES THEY'RE IN MY EYES` mystery response, we provide clients and 
   intermediaries with specific, usable information.
 
-
 But wait! We're not done yet!
 
-## Round Five: And *Stay* Solved, Damnit
+### Round Five: And *Stay* Solved, Damnit
 
 We can safely assume we'll be writing a *lot* of these param classes for any
 given project--in fact, the more of these we write, the cleaner and more 
@@ -405,8 +399,7 @@ public class FinalWeekdayResource {
 }
 {% endhighlight %}
 
-
-## tl;dr
+### tl;dr
 
 Jersey's approach to handling input is graceful in the face of ugly error 
 handling and edge cases, allowing separation of concerns, encapsulation, and 
