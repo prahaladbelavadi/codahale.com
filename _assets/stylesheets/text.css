@@ -8,12 +8,14 @@ code, pre {
     background-color: #fff;
     font-weight: normal;
     font-family: "Menlo", "Consolas", "Inconsolata", "Anonymous", "Monaco", monospace;
+    font-size: 0.9em;
+    line-height: 1.2em;
 }
 
 p code, li>code {
     border: 1px solid #DDDDDD;
-    font-size: 0.9em;
     padding: 2px;
+    font-size: 0.8em;
 }
 
 #header h1 a, h2.post-title a, h2.static-title a {
