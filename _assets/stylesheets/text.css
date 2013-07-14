@@ -3,9 +3,17 @@
     display: inline-block;
 }
 
-code {
+code, pre {
     color: #000;
+    background-color: #fff;
     font-weight: normal;
+    font-family: "Menlo", "Consolas", "Inconsolata", "Anonymous", "Monaco", monospace;
+}
+
+p code, li>code {
+    border: 1px solid #DDDDDD;
+    font-size: 0.9em;
+    padding: 2px;
 }
 
 #header h1 a, h2.post-title a, h2.static-title a {
