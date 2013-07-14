@@ -117,9 +117,8 @@ your failures are unrelated; in reality, they tend to cascade.)
 
 Therefore, the question you should be asking yourself is:
 
-<div class="panel">
-In the event of failures, which will this system sacrifice? Consistency or availability?
-</div>
+> %panel%
+> In the event of failures, which will this system sacrifice? Consistency or availability?
 
 ### Choosing Consistency Over Availability
 
@@ -153,10 +152,8 @@ cart system is the canonical example of a Dynamo model[<sup>3</sup>](#ft3)).
 
 ### But Never Both
 
-<div class="panel">
-You cannot, however, choose both consistency and availability in a distributed
-system.
-</div>
+> %panel%
+> You cannot, however, choose both consistency and availability in a distributed system.
 
 As a thought experiment, imagine a distributed system which keeps track of a
 single piece of data using three nodes—`\(A\)`, `\(B\)`, and `\(C\)`—and which claims to be
@@ -259,12 +256,11 @@ As Brewer puts it[<sup>5</sup>](#ft5):
 In terms of general advice to people building distributed systems (and really,
 who isn't these days?), I think the following is far more effective:
 
-<div class="panel">
-Despite your best efforts, your system will experience enough faults that it
-will have to make a choice between reducing yield (i.e., stop answering
-requests) and reducing harvest (i.e., giving answers based on incomplete
-data). This decision should be based on business requirements.
-</div>
+> %panel%
+> Despite your best efforts, your system will experience enough faults that it
+> will have to make a choice between reducing yield (i.e., stop answering
+> requests) and reducing harvest (i.e., giving answers based on incomplete
+> data). This decision should be based on business requirements.
 
 ### Well Now What
 
