@@ -70,5 +70,8 @@ blockquote {
 
 footer {
     text-align: center;
+}
+
+footer span {
     font-style: italic;
 }
