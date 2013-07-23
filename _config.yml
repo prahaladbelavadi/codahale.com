@@ -5,6 +5,7 @@ name: codahale.com
 rdiscount:
   extensions:
     - smart
+    - footnotes
 assets:
   compress:
     css:  sass
