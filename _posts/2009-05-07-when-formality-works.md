@@ -1,6 +1,7 @@
 ---
 title: When Formality Works
 layout: post
+summary: In which I argue that sometimes it takes a standard to improve things.
 ---
 
 [On his blog, Yehuda Katz writes](http://yehudakatz.com/2009/05/02/incentivizing-innovation/):

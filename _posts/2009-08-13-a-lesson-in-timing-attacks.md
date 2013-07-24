@@ -1,6 +1,7 @@
 ---
 title: "A Lesson In Timing Attacks (or, Don’t use MessageDigest.isEquals)"
 layout: post
+summary: In which I tell you what a timing attack is and why you should care.
 ---
 
 [Timing attacks](http://crypto.stanford.edu/~dabo/papers/ssl-timing.pdf)

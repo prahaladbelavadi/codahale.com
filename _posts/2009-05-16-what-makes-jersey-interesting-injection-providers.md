@@ -1,6 +1,7 @@
 --- 
 title: "What Makes Jersey Interesting: Injection Providers"
 layout: post
+summary: In which I describe Jersey's injection providers and how they make life easier for developing RESTful APIs.
 ---
 
 *Ok, let's get back to the geeky stuff.*

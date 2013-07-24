@@ -1,6 +1,7 @@
 --- 
 title: "How Not To Fix A Security Bug"
 layout: post
+summary: In which I am disappointed by a security vulnerability in Ruby.
 ---
 
 ### November 25th, 2008

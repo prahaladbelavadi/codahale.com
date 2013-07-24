@@ -1,6 +1,7 @@
 ---
 title: Ruby and Male Privilege
 layout: post
+summary: In which I'm disappointed by sexism in the Ruby community.
 ---
 
 ### Act One

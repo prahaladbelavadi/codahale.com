@@ -1,6 +1,7 @@
 ---
 title: The Rest Of The Story
 layout: post
+summary: In which I wrap up some Scala drama.
 ---
 
 About a week ago, I

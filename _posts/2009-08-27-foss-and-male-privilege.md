@@ -1,6 +1,7 @@
 ---
 title: FOSS and Male Privilege
 layout: post
+summary: In which I am baffled by Bruce Perens.
 ---
 
 From the comments on the LWN thread,

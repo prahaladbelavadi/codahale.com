@@ -1,6 +1,7 @@
 ---
 title: How To Safely Store A Password
 layout: post
+summary: In which I recommend bcrypt.
 ---
 
 ### Use `bcrypt`
