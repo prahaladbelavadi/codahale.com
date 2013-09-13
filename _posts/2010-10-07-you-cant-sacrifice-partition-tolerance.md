@@ -9,7 +9,7 @@ I've seen a number of distributed databases recently
 [being "CA"](http://en.wikipedia.org/w/index.php?title=Membase&oldid=384896988)
 --that is, providing both consistency and availability while not providing
 partition-tolerance. To me, this indicates that the developers of these systems
-do not understand the the CAP theorem and its implications.
+do not understand the CAP theorem and its implications.
 
 ### A Quick Refresher
 
@@ -284,7 +284,7 @@ system will sacrifice when failures happen.
 
 1. Brewer. [Towards robust distributed systems.](http://www.cs.berkeley.edu/~brewer/cs262b-2004/PODC-keynote.pdf)
    Proceedings of the Annual ACM Symposium on Principles of Distributed
-   Computing (2000) vol. 19 pp. 7-10 <a id="ft1" />
+   Computing (2000) vol. 19 pp. 7—10 <a id="ft1" />
 
 2. Gilbert and Lynch. [Brewer's conjecture and the feasibility of consistent, available, partition-tolerant web services.](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.67.6951&rep=rep1&type=pdf)
    ACM SIGACT News (2002) vol. 33 (2) pp. 59 <a id="ft2" />
@@ -295,7 +295,7 @@ system will sacrifice when failures happen.
 
 4. Fox and Brewer. [Harvest, yield, and scalable tolerant systems.](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.24.3690&rep=rep1&type=pdf)
    Hot Topics in Operating Systems, 1999. Proceedings of the Seventh Workshop on
-   (1999) pp. 174 - 178 <a id="ft4" />
+   (1999) pp. 174—178 <a id="ft4" />
 
 5. Brewer. [Lessons from giant-scale services.](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.83.4274&rep=rep1&type=pdf)
    Internet Computing, IEEE (2001) vol. 5 (4) pp. 46 - 55 <a id="ft5"></a>
