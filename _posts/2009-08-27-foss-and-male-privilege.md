@@ -14,7 +14,7 @@ From the comments on the LWN thread,
 > men in the field had established mechanisms which were astonishingly effective
 > at keeping them out even though they really were interested, and which still
 > stood today.
-> 
+>
 > …
 >
 > I'd be a lot more comfortable if I heard it from them, and if they explained
@@ -40,12 +40,12 @@ From the comments on the LWN thread,
 > world-changing since I was 18 years old. And most of the above information is
 > readily available online. About half the first page of Google results (from
 > where I'm sitting right now) for "women in open source" mention me.
-> 
+>
 > Recently, I have also been documenting issues that women face in open source,
 > linking and discussing and synthesising and summarising and KEYNOTING OSCON.
 > (I started doing this a bit in 1998, but stepped back from it for a while, so
 > most of my women-in-open-source work is more recent.)
-> 
+>
 > And then I look at this thread and see that a) "women are just less passionate
 > about open source than men" and b) that nobody seems to believe us when we say
 > there is a problem.

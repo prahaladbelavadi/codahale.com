@@ -31,13 +31,13 @@ implement [crazy experiments](http://functionaljava.org/) and
 [solve their problems](http://www.thimbleware.com/projects/jrel) in new and
 unique ways *just like every other programming community*.
 
-In the [Java Community Process](http://jcp.org/en/procedures/jcp2), you write
-a JSR proposal describing what you'd like to standardize and why. [Here's the original proposal for JSR-311, about RESTful web services for Java](http://www.jcp.org/en/jsr/detail?id=311#orig).
-Then you assemble an expert group--a group of people who are both
-knowledgeable and interested in the subject--and write a bunch of drafts, go
-through a bunch of reviews, and finally end up with both a free reference
-implementation of the standard and a test suite to verify API compliance with
-the standard.
+In the [Java Community Process](http://jcp.org/en/procedures/jcp2), you write a
+JSR proposal describing what you'd like to standardize and
+why. [Here's the original proposal for JSR-311, about RESTful web services for Java](http://www.jcp.org/en/jsr/detail?id=311#orig).
+Then you assemble an expert group--a group of people who are both knowledgeable
+and interested in the subject--and write a bunch of drafts, go through a bunch
+of reviews, and finally end up with both a free reference implementation of the
+standard and a test suite to verify API compliance with the standard.
 
 Horrible, I know.
 
@@ -55,8 +55,7 @@ community is [Rack](http://rack.rubyforge.org/). It's not a very sexy
 project--one can't claim to be a web framework middleware ninja--but it has an
 incredible amount of utility: it's standardized the interface between web
 application containers--[Mongrel](http://mongrel.rubyforge.org/),
-[Thin](http://code.macournoyer.com/thin/),
-[Ebb](http://ebb.rubyforge.org/),
+[Thin](http://code.macournoyer.com/thin/), [Ebb](http://ebb.rubyforge.org/),
 [Passenger](http://www.modrails.com/),
 [Glassfish, Jetty, Tomcat, JBoss, SpringSource, Google App Engine](http://kenai.com/projects/jruby-rack/pages/Home),
 [WEBrick](http://github.com/chneukirchen/rack/blob/d221938a6401d956ac6cfdc892f9b1c11b1fa31a/lib/rack/handler/webrick.rb),
@@ -65,7 +64,8 @@ application containers--[Mongrel](http://mongrel.rubyforge.org/),
 [CGI](http://github.com/chneukirchen/rack/blob/d221938a6401d956ac6cfdc892f9b1c11b1fa31a/lib/rack/handler/cgi.rb),
 [FastCGI](http://github.com/chneukirchen/rack/blob/d221938a6401d956ac6cfdc892f9b1c11b1fa31a/lib/rack/handler/fastcgi.rb),
 [SCGI](http://github.com/chneukirchen/rack/blob/d221938a6401d956ac6cfdc892f9b1c11b1fa31a/lib/rack/handler/scgi.rb),
-[EventedMongrel, SwiftipliedMongrel](http://swiftiply.swiftcore.org/mongrel.html)--and Ruby web applications.
+[EventedMongrel, SwiftipliedMongrel](http://swiftiply.swiftcore.org/mongrel.html)--and
+Ruby web applications.
 
 Thanks to Rack's acceptance, you write a web application to work with a minimal
 interface and deploy it on a wide variety of infrastructure without needing to
@@ -76,8 +76,8 @@ other things, *like caring about your actual web application.*
 ### Why did Rack succeed?
 
 Rack succeeded because it has a [spec](http://rack.rubyforge.org/doc/SPEC.html),
-a [reference implementation](http://github.com/rack/rack/tree/master) and even
-a [test suite](http://github.com/rack/rack/blob/815342a8e15db564b766f209ffb1e340233f064f/lib/rack/lint.rb)
+a [reference implementation](http://github.com/rack/rack/tree/master) and even a
+[test suite](http://github.com/rack/rack/blob/815342a8e15db564b766f209ffb1e340233f064f/lib/rack/lint.rb)
 to ensure spec compatibility.
 
 It doesn't matter if Christian Neukirchen--not that he would--hauls off and
@@ -116,22 +116,22 @@ Why?
 > ruby-core is constantly trying out "small mutations" is really goddamn
 > annoying.
 
-Not everything needs a spec--actually, *very few things need a spec.* But
-trying to build the fundamentals of interoperability without a spec and an open
-process is--like Ruby 1.8.7--bound to fail.
+Not everything needs a spec--actually, *very few things need a spec.* But trying
+to build the fundamentals of interoperability without a spec and an open process
+is--like Ruby 1.8.7--bound to fail.
 
 ### tl;dr
 
 The path to success for a Ruby library and a JSR are the same: pick a problem
 where diversity of interface poses a problem, extract a common solution, get a
-bunch of feedback from <del>stakeholders</del>interested people in the
-community who are working in the area, build a solid reference implementation
-which people can easily use, build a test suite so implementers can red/green
-their projects, and write a well-defined, simple spec.
+bunch of feedback from <del>stakeholders</del>interested people in the community
+who are working in the area, build a solid reference implementation which people
+can easily use, build a test suite so implementers can red/green their projects,
+and write a well-defined, simple spec.
 
-It worked for [servlets](http://jcp.org/en/jsr/detail?id=315),
-it worked for [Hibernate](http://jcp.org/en/jsr/detail?id=220),
-it's working for [Restlet](http://jcp.org/en/jsr/detail?id=311),
-it's working for [Joda Time](http://jcp.org/en/jsr/detail?id=310),
-it'll work for [Spring and Guice](http://docs.google.com/Doc?id=dd2fhx4z_13cw24s7dj),
-and it worked for Rack.
+It worked for [servlets](http://jcp.org/en/jsr/detail?id=315), it worked for
+[Hibernate](http://jcp.org/en/jsr/detail?id=220), it's working for
+[Restlet](http://jcp.org/en/jsr/detail?id=311), it's working for
+[Joda Time](http://jcp.org/en/jsr/detail?id=310), it'll work for
+[Spring and Guice](http://docs.google.com/Doc?id=dd2fhx4z_13cw24s7dj), and it
+worked for Rack.

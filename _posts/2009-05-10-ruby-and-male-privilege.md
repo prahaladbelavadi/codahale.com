@@ -60,6 +60,7 @@ A few days ago, I noticed this exchange on Twitter:
 
 And [this gem](http://twitter.com/dhh/status/1631342976) from David Heinemeier
 Hansson, creator of Rails:
+
 > I do think the spheres of the female body gives life wonder. Suppressing all
 > our animal instincts is futile.
 
@@ -67,10 +68,12 @@ Ladies and gentlemen, the leading lights of the Ruby community.
 
 ### tl;dr
 
-Read [Why Are There So Few Female Computer Scientists](http://people.mills.edu/spertus/Gender/pap/pap.html) and
-[HOWTO Encourage Women In Linux](http://www.tldp.org/HOWTO/Encourage-Women-Linux-HOWTO/). And honestly,
-I'm beginning to wonder if the women who aren't joining the Ruby community
-aren't making the right choice.
+Read
+[Why Are There So Few Female Computer Scientists](http://people.mills.edu/spertus/Gender/pap/pap.html)
+and
+[HOWTO Encourage Women In Linux](http://www.tldp.org/HOWTO/Encourage-Women-Linux-HOWTO/). And
+honestly, I'm beginning to wonder if the women who aren't joining the Ruby
+community aren't making the right choice.
 
 **Update:** Also be sure to read
 [The Male Programmer Privilege Checklist](http://lafalafu.com/krc/privilege.html)

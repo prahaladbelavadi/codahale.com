@@ -26,8 +26,8 @@ passwords.
 A modern server can calculate the MD5 hash of about
 [330MB every second](http://www.cryptopp.com/benchmarks-amd64.html). If your
 users have passwords which are lowercase, alphanumeric, and 6 characters long,
-you can try *every single possible password of that size* in around
-**40 seconds**.
+you can try *every single possible password of that size* in around **40
+seconds**.
 
 And that's without investing anything.
 
@@ -42,20 +42,21 @@ per second.**
 
 It's important to note that **salts are useless for preventing dictionary
 attacks or brute force attacks.** You can use huge salts or many salts or
-hand-harvested, shade-grown, organic [Himalayan pink salt](http://en.wikipedia.org/wiki/Himalayan_salt).
-It doesn't affect how fast an attacker can try a candidate password, given the
-hash and the salt from your database.
+hand-harvested, shade-grown, organic
+[Himalayan pink salt](http://en.wikipedia.org/wiki/Himalayan_salt).  It doesn't
+affect how fast an attacker can try a candidate password, given the hash and the
+salt from your database.
 
 Salt or no, if you're using a general-purpose hash function designed for speed
 you're well and truly effed.
 
 ### `bcrypt` Solves These Problems
 
-How? Basically, it's slow as hell. It uses a variant of the Blowfish
-encryption algorithm's keying schedule, and introduces a *work factor*, which
-allows you to determine how expensive the hash function will be. Because of
-this, `bcrypt` can keep up with Moore's law. As computers get faster you can
-increase the work factor and the hash will get slower.
+How? Basically, it's slow as hell. It uses a variant of the Blowfish encryption
+algorithm's keying schedule, and introduces a *work factor*, which allows you to
+determine how expensive the hash function will be. Because of this, `bcrypt` can
+keep up with Moore's law. As computers get faster you can increase the work
+factor and the hash will get slower.
 
 How much slower is `bcrypt` than, say, `MD5`? Depends on the work factor. Using
 a work factor of 12, `bcrypt` hashes the password `yaaa` in about 0.3 seconds on
@@ -73,32 +74,39 @@ and security. Use it.
 
 ### Updated February 24th, 2011
 
-I've been getting pretty regular emails about this article for the past year, and I figured I'd
-address some of the concerns here rather than have the same conversations over and over again.
+I've been getting pretty regular emails about this article for the past year,
+and I figured I'd address some of the concerns here rather than have the same
+conversations over and over again.
 
 > Isn't `bcrypt` just Blowfish? Where do you store the password?
 
-Please read the [Provos & Mazières paper](http://www.usenix.org/events/usenix99/provos.html).
-`bcrypt` is an adaptive password hashing algorithm which uses the Blowfish keying schedule, not a
-symmetric encryption algorithm.
+Please read the
+[Provos & Mazières paper](http://www.usenix.org/events/usenix99/provos.html).
+`bcrypt` is an adaptive password hashing algorithm which uses the Blowfish
+keying schedule, not a symmetric encryption algorithm.
 
-> You said salts aren't helpful, but what about rainbow tables? Why would you suggest people not use salts?
+> You said salts aren't helpful, but what about rainbow tables? Why would you
+> suggest people not use salts?
 
-As the [Provos & Mazières paper](http://www.usenix.org/events/usenix99/provos.html) describes,
-`bcrypt` has salts built-in to prevent rainbow table attacks. So I'm not saying salts are without
-purpose, I'm saying that they don't prevent dictionary or brute force attacks (which they don't).
+As the
+[Provos & Mazières paper](http://www.usenix.org/events/usenix99/provos.html)
+describes, `bcrypt` has salts built-in to prevent rainbow table attacks. So I'm
+not saying salts are without purpose, I'm saying that they don't prevent
+dictionary or brute force attacks (which they don't).
 
-Rainbow tables, despite their recent popularity as a subject of blog posts, have not aged
-gracefully. CUDA/OpenCL implementations of password crackers can leverage the massive amount of
-parallelism available in GPUs, peaking at
-[billions of candidate passwords a second](http://www.golubev.com/hashgpu.htm). You can literally
-test all lowercase, alphabetic passwords which are ≤7 characters in less than 2 seconds. And you
-can now rent the hardware which makes this possible to the tune of
-[less than $3/hour](http://aws.amazon.com/ec2/#pricing). For about $300/hour, you could crack around
-500,000,000,000 candidate passwords a second.
+Rainbow tables, despite their recent popularity as a subject of blog posts, have
+not aged gracefully. CUDA/OpenCL implementations of password crackers can
+leverage the massive amount of parallelism available in GPUs, peaking at
+[billions of candidate passwords a second](http://www.golubev.com/hashgpu.htm).
+You can literally test all lowercase, alphabetic passwords which are ≤7
+characters in less than 2 seconds. And you can now rent the hardware which makes
+this possible to the tune of
+[less than $3/hour](http://aws.amazon.com/ec2/#pricing). For about $300/hour,
+you could crack around 500,000,000,000 candidate passwords a second.
 
-Given this massive shift in the economics of cryptographic attacks, it simply doesn't make sense for
-anyone to waste terabytes of disk space in the hope that their victim didn't use a salt. It's a lot
-easier to just crack the passwords. Even a "good" hashing scheme of
-`\(SHA2_{256}(salt\ \|\ password)\)` is still completely vulnerable to these cheap and effective
-attacks, thus the importance of an adaptive hashing algorithm like `bcrypt`.
+Given this massive shift in the economics of cryptographic attacks, it simply
+doesn't make sense for anyone to waste terabytes of disk space in the hope that
+their victim didn't use a salt. It's a lot easier to just crack the
+passwords. Even a "good" hashing scheme of `\(SHA2_{256}(salt\ \|\ password)\)`
+is still completely vulnerable to these cheap and effective attacks, thus the
+importance of an adaptive hashing algorithm like `bcrypt`.

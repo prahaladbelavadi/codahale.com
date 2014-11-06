@@ -37,9 +37,9 @@ From Gilbert and Lynch[<sup>2</sup>](#ft2):
 
 Most people seem to understand this, but it bears repetition: a system is
 consistent if an update is applied to all relevant nodes at the same logical
-time. Among other things, this means that standard database replication is
-*not strongly consistent.* As anyone whose read replicas have drifted from the
-master knows, special logic must be introduced to handle replication lag.
+time. Among other things, this means that standard database replication is *not
+strongly consistent.* As anyone whose read replicas have drifted from the master
+knows, special logic must be introduced to handle replication lag.
 
 That said, consistency which is both instantaneous and global is impossible. The
 universe simply does not permit it. So the goal here is to push the time
@@ -57,7 +57,8 @@ Again from Gilbert and Lynch[<sup>2</sup>](#ft2):
 > availability: even when severe network failures occur, every request must
 > terminate.
 
-Despite the notion of ["100% uptime as much as possible,"](http://blog.mongodb.org/post/381927266/what-about-durability)
+Despite the notion of
+["100% uptime as much as possible,"](http://blog.mongodb.org/post/381927266/what-about-durability)
 there are limits to availability. If you have a single piece of data on five
 nodes and all five nodes die, that data is gone and any request which required
 it in order to be processed cannot be handled.
@@ -89,11 +90,11 @@ Network partitions aren't limited to dropped packets: a crashed server can be
 thought of as a network partition. The failed node is effectively the only
 member of its partition component, and thus all messages to it are "lost" (i.e.,
 they are not processed by the node due to its failure). Handling a crashed
-machine counts as partition-tolerance.
-(**Update: I was wrong about this part. See [this](#errata10221010) for more.**)
-(N.B.: A node which has gone offline is actually the easiest sort of failure to
-deal with—you're assured that the dead node is not giving incorrect responses to
-another component of your system.)
+machine counts as partition-tolerance. (**Update: I was wrong about this
+part. See [this](#errata10221010) for more.**) (N.B.: A node which has gone
+offline is actually the easiest sort of failure to deal with—you're assured that
+the dead node is not giving incorrect responses to another component of your
+system.)
 
 For a distributed (i.e., multi-node) system to **not** require
 partition-tolerance it would have to run on a network which is *guaranteed to
@@ -119,7 +120,8 @@ your failures are unrelated; in reality, they tend to cascade.)
 Therefore, the question you should be asking yourself is:
 
 > %panel%
-> In the event of failures, which will this system sacrifice? Consistency or availability?
+> In the event of failures, which will this system sacrifice?
+> Consistency or availability?
 
 ### Choosing Consistency Over Availability
 
@@ -137,8 +139,8 @@ of business requirements.
 
 ### Choosing Availability Over Consistency
 
-If a system chooses to provide Availability over Consistency in the presence
-of partitions (all together now: failures), it will respond to all requests,
+If a system chooses to provide Availability over Consistency in the presence of
+partitions (all together now: failures), it will respond to all requests,
 potentially returning stale reads and accepting conflicting writes. These
 inconsistencies are often resolved via causal ordering mechanisms like vector
 clocks and application-specific conflict resolution procedures. (Dynamo systems
@@ -154,22 +156,23 @@ cart system is the canonical example of a Dynamo model[<sup>3</sup>](#ft3)).
 ### But Never Both
 
 > %panel%
-> You cannot, however, choose both consistency and availability in a distributed system.
+> You cannot, however, choose both consistency and availability in a distributed
+> system.
 
 As a thought experiment, imagine a distributed system which keeps track of a
-single piece of data using three nodes—`\(A\)`, `\(B\)`, and `\(C\)`—and which claims to be
-both consistent and available in the face of network partitions. Misfortune
-strikes, and that system is partitioned into two components: `\( \lbrace A,B \rbrace \)` and
-`\( \lbrace C \rbrace \)`.
-In this state, a write request arrives at node `\(C\)` to update the single piece of
+single piece of data using three nodes—`\(A\)`, `\(B\)`, and `\(C\)`—and which
+claims to be both consistent and available in the face of network
+partitions. Misfortune strikes, and that system is partitioned into two
+components: `\( \lbrace A,B \rbrace \)` and `\( \lbrace C \rbrace \)`.  In this
+state, a write request arrives at node `\(C\)` to update the single piece of
 data.
 
 That node only has two options:
 
-1. Accept the write, knowing that neither `\(A\)` nor `\(B\)` will know about this new
-   data until the partition heals.
-2. Refuse the write, knowing that the client might not be able to contact `\(A\)` or
-   `\(B\)` until the partition heals.
+1. Accept the write, knowing that neither `\(A\)` nor `\(B\)` will know about
+   this new data until the partition heals.
+2. Refuse the write, knowing that the client might not be able to contact
+   `\(A\)` or `\(B\)` until the partition heals.
 
 You either choose availability (Door #1) or you choose consistency (Door #2).
 You cannot choose both.
@@ -225,12 +228,12 @@ uses:
 **Harvest** is a far more overlooked metric, especially in the age of the
 relational database. If we imagine working on a search engine, however, we can
 imagine there being separate indexes for each word. The index of web pages which
-use the word "cute" is on node `\(A\)`, the index of web pages which use the word
-"baby" is on node `\(B\)`, and the index for the word "animals" is on machine `\(C\)`. A
-search, then, for "cute baby animals" which combined results from nodes `\(A\)`,
-`\(B\)`, and `\(C\)` would have a 100% harvest. If node `\(B\)` was unavailable, however, we
-might  return a result for just "cute animals," which would be a harvest of 66%.
-In other words:
+use the word "cute" is on node `\(A\)`, the index of web pages which use the
+word "baby" is on node `\(B\)`, and the index for the word "animals" is on
+machine `\(C\)`. A search, then, for "cute baby animals" which combined results
+from nodes `\(A\)`, `\(B\)`, and `\(C\)` would have a 100% harvest. If node
+`\(B\)` was unavailable, however, we might return a result for just "cute
+animals," which would be a harvest of 66%.  In other words:
 
 `\[
 harvest = \frac{data\ available}{total\ data}
@@ -305,11 +308,14 @@ decade old and all of them are freely available online.)
 
 ### Updated October 8, 2010
 
-Dr. Brewer [approves](http://twitter.com/eric_brewer/status/26819094612) (somewhat).
+Dr. Brewer [approves](http://twitter.com/eric_brewer/status/26819094612)
+(somewhat).
 
 ### Updated October 21, 2010
 
-Dr. Stonebraker [does not approve](http://voltdb.com/blog/clarifications-cap-theorem-and-data-related-errors) (somewhat).
+Dr. Stonebraker
+[does not approve](http://voltdb.com/blog/clarifications-cap-theorem-and-data-related-errors)
+(somewhat).
 
 ### Updated October 22, 2010
 

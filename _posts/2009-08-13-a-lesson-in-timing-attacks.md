@@ -4,8 +4,8 @@ layout: post
 summary: In which I tell you what a timing attack is and why you should care.
 ---
 
-[Timing attacks](http://crypto.stanford.edu/~dabo/papers/ssl-timing.pdf)
-are pretty horrible from the perspective of someone trying to write a secure
+[Timing attacks](http://crypto.stanford.edu/~dabo/papers/ssl-timing.pdf) are
+pretty horrible from the perspective of someone trying to write a secure
 cryptosystem. They work against a programmer's best instincts—don't do extra
 work—to give an attacker with access to a Statistics 101 textbook a good solid
 grip on your application's guts.
@@ -18,7 +18,8 @@ operating on. For [HMACs](http://en.wikipedia.org/wiki/HMAC), this means using
 the amount of time your application takes to compare a given value with a
 calculated value to learn information about the calculated value.
 
-Take [the recent Keyczar vulnerability that Nate Lawson found](http://rdist.root.org/2009/05/28/timing-attack-in-google-keyczar-library/).
+Take
+[the recent Keyczar vulnerability that Nate Lawson found](http://rdist.root.org/2009/05/28/timing-attack-in-google-keyczar-library/).
 He was able to take the fact that Keyczar used a simple break-on-inequality
 algorithm to compare a candidate HMAC digest with the calculated digest.
 
@@ -80,10 +81,10 @@ So. Almost microsecond resolution with hundreds to thousands of measurements.
 Who wants to bet that network jitter compensation models get worse instead of
 better?
 
-A worst-case scenario for guessing an HMAC would require `\(20 \times 256 \times n\)`
-measurements, where `\(n\)` is the number of measurements required to pin down a
-single byte. So—around 5,000,000 requests. You could do that in less than a week
-at a barely-perceptible 10 req/s.
+A worst-case scenario for guessing an HMAC would require `\(20 \times 256 \times
+n\)` measurements, where `\(n\)` is the number of measurements required to pin
+down a single byte. So—around 5,000,000 requests. You could do that in less than
+a week at a barely-perceptible 10 req/s.
 
 It's an attack which takes some planning and analysis, but it's viable.
 
@@ -124,8 +125,8 @@ public static boolean isEqual(byte[] a, byte[] b) {
 
 Oh, if only.
 
-Check out what's inside of `java.security.MessageDigest` as recently as Java
-6.0 Update 15:
+Check out what's inside of `java.security.MessageDigest` as recently as Java 6.0
+Update 15:
 
 {% highlight java %}
 /**
@@ -180,8 +181,8 @@ or awesome.
 Replace your usage of `MessageDigest.isEqual` with a constant-time algorithm,
 like the one above.
 
-**Every time you compare two values, ask yourself: what could someone do if
-they knew either of these values?** If the answer is at all meaningful, use a
+**Every time you compare two values, ask yourself: what could someone do if they
+knew either of these values?** If the answer is at all meaningful, use a
 constant-time algorithm to compare them.
 
 ### A Side Note
@@ -202,9 +203,8 @@ required watching for everyone with access to a compiler.
 
 As [sophacles on Hacker News](http://news.ycombinator.com/item?id=761059)
 pointed out, I had overly refactored the suggested constant-time algorithms and
-introduced a more subtle timing attack vulnerability via the return
-statement's boolean expression short-circuit. The algorithm has been updated to
-fix this.
+introduced a more subtle timing attack vulnerability via the return statement's
+boolean expression short-circuit. The algorithm has been updated to fix this.
 
 ### Updated December 3, 2009
 
