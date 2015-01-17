@@ -115,7 +115,7 @@ public static boolean isEqual(byte[] a, byte[] b) {
 
     int result = 0;
     for (int i = 0; i < a.length; i++) {
-      result |= a[i] ^ b[i]
+      result |= a[i] ^ b[i];
     }
     return result == 0;
 }
