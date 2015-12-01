@@ -1,6 +1,6 @@
 permalink: /:title/
-highlighter: pygments
-markdown: rdiscount
+highlighter: rouge
+markdown: kramdown
 name: codahale.com
 rdiscount:
   extensions:
