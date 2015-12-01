@@ -2,10 +2,6 @@ permalink: /:title/
 highlighter: rouge
 markdown: kramdown
 name: codahale.com
-rdiscount:
-  extensions:
-    - smart
-    - footnotes
 assets:
   compress:
     css:  sass
