@@ -11,4 +11,4 @@ install:
 	gem install jekyll jekyll-assets sass rouge
 
 publish: build
-	@rsync -avz --exclude Makefile --exclude README.md _site/ codahale@codahale.com:~/codahale.com
+	@rsync -avz --exclude Makefile --exclude README.md _site/ codahale@ssh.codahale.com:~/codahale.com
