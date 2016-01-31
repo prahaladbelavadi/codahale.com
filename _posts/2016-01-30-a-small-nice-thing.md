@@ -21,10 +21,10 @@ pairwise fashion:
 \left[\begin{array}{ccc}5 & 7 & 9\end{array}\right]
 \]`
 
-From a purely syntactic perspective, this is usually simple task, but syntactic
-complexity is often misleading. When learning a new programming language, I
-often stop to consider how many concepts would need to be explained to a novice
-familiar with the underlying domain.
+From a purely syntactic perspective, this is usually a simple task, but
+syntactic complexity is often misleading. When learning a new programming
+language, I often stop to consider how many concepts would need to be explained
+to a novice familiar with the underlying domain.
 
 ### O, Complexity!
 
