@@ -52,7 +52,7 @@ a.zip(b).map { |(x, y)| x + y }
 {% endhighlight %}
 
 Ruby would require an explanation of method invocation, `zip`, `map`, method
-blocks, and parameter destructuring.
+blocks, and parameter destructuring, and infix notation.
 
 #### Python
 
@@ -182,3 +182,4 @@ for concise expressions of common bits of code. I think that's nice.
   [@michalmigurski](https://twitter.com/michalmigurski)!
 * Cleaned up a confusing sentence in the second paragraph. Thanks,
   [@colby](https://twitter.com/colby).
+* Included infix notation in the Ruby concepts.
