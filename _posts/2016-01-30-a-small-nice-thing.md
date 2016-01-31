@@ -124,10 +124,10 @@ iterables, and `zip` returns a list of tuples, both forms are almost identical.
 #### Ruby
 
 {% highlight ruby %}
-a.zip(b).zip(c).map { |((x, y), z)| x + y + z }
+a.zip(b, c).map { |(x, y, z)| x + y + z }
 {% endhighlight %}
 
-Ruby extends the invocation chain and nests the tuples.
+Ruby needs an additional parameter to `zip` and another addition.
 
 #### Javascript
 
@@ -189,3 +189,8 @@ for concise expressions of common bits of code. I think that's nice.
 * Included infix notation in the Ruby concepts.
 * Changed the Python example to use `sum`, which seems pretty nice. Thanks,
   [@AnthonyBriggs](https://twitter.com/AnthonyBriggs)!
+
+### Updated January 31, 2016
+
+* Changed the second Ruby example to use multiple arguments to `zip`. Thanks,
+  [@lindvall](https://twitter.com/lindvall)!
