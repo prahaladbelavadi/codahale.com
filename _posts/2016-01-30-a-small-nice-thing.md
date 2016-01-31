@@ -57,11 +57,11 @@ blocks, and parameter destructuring, and infix notation.
 #### Python
 
 {% highlight python %}
-[(x + y) for (x, y) in zip(a, b)]
+[sum(t) for t in zip(a, b)]
 {% endhighlight %}
 
-For Python you'd need to explain list comprehensions, tuples, function
-invocation, and `zip`.
+For Python you'd need to explain list comprehensions, function invocation,
+`sum`, and `zip`.
 
 #### Javascript
 
@@ -115,11 +115,11 @@ another infix operator in the anonymous function.
 #### Python
 
 {% highlight python %}
-[(x + y + z) for (x, y, z) in zip(a, b, c)]
+[sum(t) for t in zip(a, b, c)]
 {% endhighlight %}
 
-Python needs an additional parameter to `zip`, another tuple element, and
-another addition.
+Python just needs an additional parameter to `zip`. Because `sum` operates on
+iterables, and `zip` returns a list of tuples, both forms are almost identical.
 
 #### Ruby
 
@@ -156,18 +156,22 @@ Go handles the situation similarly.
 (map + a b c)
 {% endhighlight %}
 
-Clojure, though, remains almost exactly the same as the original. We add `c` as
-an additional parameter to `map`---that's it.
+Like Python, Clojure remains almost exactly the same as the original. We add `c`
+as an additional parameter to `map`---that's it.
 
-Like Python, `map` is variadic, which avoids the tuple nesting seen in Ruby and
-Scala. Unlike all the others, though, `+` is neither infix (as Clojure has no
-such thing) nor binary---like `map`, it's a variadic function:
+`map` is variadic, which avoids the tuple nesting seen in Ruby and Scala; like
+Python's `sum`, `+` is neither infix (as Clojure has no such thing) nor
+binary. Like `map`, it's a variadic function:
 
 {% highlight clojure %}
 (+ 1 2 3) => 6
 {% endhighlight %}
 
 If either `map` or `+` were of fixed arity, this would not be possible.
+
+Unlike Python, though, Clojure's example doesn't require list
+comprehensions. (Python does have a `map` function, but it's no longer
+considered Pythonic.)
 
 ### tl;dr
 
@@ -181,5 +185,7 @@ for concise expressions of common bits of code. I think that's nice.
   more idiomatic way of doing things. Thanks,
   [@michalmigurski](https://twitter.com/michalmigurski)!
 * Cleaned up a confusing sentence in the second paragraph. Thanks,
-  [@colby](https://twitter.com/colby).
+  [@colby](https://twitter.com/colby)!
 * Included infix notation in the Ruby concepts.
+* Changed the Python example to use `sum`, which seems pretty nice. Thanks,
+  [@AnthonyBriggs](https://twitter.com/AnthonyBriggs)!
