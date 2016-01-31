@@ -57,11 +57,11 @@ blocks, and parameter destructuring.
 #### Python
 
 {% highlight python %}
-map(lambda (x, y): x + y, zip(a, b))
+[(x + y) for (x, y) in zip(a, b)]
 {% endhighlight %}
 
-Python is similar to Ruby, but with function invocation instead of method
-invocation and lambda expressions instead of blocks.
+For Python you'd need to explain list comprehensions, tuples, function
+invocation, and `zip`.
 
 #### Javascript
 
@@ -115,10 +115,11 @@ another infix operator in the anonymous function.
 #### Python
 
 {% highlight python %}
-map(lambda (x, y, z): x + y + z, zip(a, b, c))
+[(x + y + z) for (x, y, z) in zip(a, b, c)]
 {% endhighlight %}
 
-Python handles this similarly to Scala.
+Python needs an additional parameter to `zip`, another tuple element, and
+another addition.
 
 #### Ruby
 
@@ -173,3 +174,9 @@ If either `map` or `+` were of fixed arity, this would not be possible.
 The regularity of Clojure as a programming language provides many opportunities
 for composition compared with other programming languages, which in turn allows
 for concise expressions of common bits of code. I think that's nice.
+
+### Updated January 30, 2016
+
+* Changed the Python example to use list comprehensions, which I'm assured are a
+  more idiomatic way of doing things. Thanks,
+  [@michalmigurski](https://twitter.com/michalmigurski)!
