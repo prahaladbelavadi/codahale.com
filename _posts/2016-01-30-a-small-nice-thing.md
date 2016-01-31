@@ -21,10 +21,10 @@ pairwise fashion:
 \left[\begin{array}{ccc}5 & 7 & 9\end{array}\right]
 \]`
 
-In most programming languages I've used this is a simple task from a purely
-syntactic perspective, but syntactic complexity is often misleading. When
-learning a new programming language, I often stop to consider how many concepts
-would need to be explained to a novice familiar with the underlying domain.
+From a purely syntactic perspective, this is usually simple task, but syntactic
+complexity is often misleading. When learning a new programming language, I
+often stop to consider how many concepts would need to be explained to a novice
+familiar with the underlying domain.
 
 ### O, Complexity!
 
@@ -180,3 +180,5 @@ for concise expressions of common bits of code. I think that's nice.
 * Changed the Python example to use list comprehensions, which I'm assured are a
   more idiomatic way of doing things. Thanks,
   [@michalmigurski](https://twitter.com/michalmigurski)!
+* Cleaned up a confusing sentence in the second paragraph. Thanks,
+  [@colby](https://twitter.com/colby).
