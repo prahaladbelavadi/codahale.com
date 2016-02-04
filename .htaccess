@@ -1,3 +1,1 @@
 ErrorDocument 404 /404.html
-RewriteCond %{HTTP:CF-Visitor} '"scheme":"http"'
-RewriteRule ^(.*)$ https://codahale.com/$1 [L]
