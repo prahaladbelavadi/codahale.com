@@ -1,14 +1,14 @@
 build: clean
-	jekyll build
+	bundle exec jekyll build
 
 clean:
 	rm -rf _site
 
 server: clean
-	jekyll server --watch
+	bundle exec jekyll server --watch
 
 install:
-	gem install jekyll jekyll-assets sass rouge
+	bundle install --path vendor/bundle
 
 publish: build
 	aws s3 sync _site s3://codahale.com --acl public-read 
