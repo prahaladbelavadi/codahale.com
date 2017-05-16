@@ -111,7 +111,6 @@ to design, plan, and implement "best practices"* regarding the Ruby language.
 
 Why?
 
-> %panel%
 > Because trying to build a business on top of a Ruby interpreter in which
 > ruby-core is constantly trying out "small mutations" is really goddamn
 > annoying.
