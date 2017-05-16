@@ -2,7 +2,7 @@ build: clean
 	bundle exec jekyll build
 
 clean:
-	rm -rf _site
+	rm -rf _site .sass-cache
 
 server: clean
 	bundle exec jekyll server --watch
