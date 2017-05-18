@@ -11,4 +11,4 @@ install:
 	bundle install --path vendor/bundle
 
 publish: build
-	aws s3 sync _site s3://codahale.com --acl public-read 
+	aws s3 sync _site s3://codahale.com --acl public-read --cache-control max-age=300
