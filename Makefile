@@ -5,7 +5,7 @@ clean:
 	rm -rf _site .sass-cache
 
 server: clean
-	bundle exec jekyll server --watch
+	bundle exec jekyll server --watch --future --drafts --unpublished
 
 install:
 	bundle install --path vendor/bundle
