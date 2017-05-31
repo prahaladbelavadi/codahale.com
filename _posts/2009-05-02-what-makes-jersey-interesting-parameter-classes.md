@@ -27,7 +27,7 @@ Broadly speaking, Jersey maps resources to classes, and HTTP verbs to methods.
 
 Here's an example resource class:
 
-{% highlight java %}
+```java
 @Path("/helloworld")
 @Produces(MediaType.TEXT_PLAIN)
 public class HelloWorldResource {
@@ -36,7 +36,7 @@ public class HelloWorldResource {
     return "Hello, world!";
   }
 }
-{% endhighlight %}
+```
 
 The `@Path` annotation marks the class as a resource class and tells Jersey what
 URIs the resource is responsible for. When a request comes in for `/helloworld`,
@@ -69,7 +69,7 @@ code here; you'll have to settle for a contrived example.
 The first thing I'll do is sketch out a skeleton resource class. Here's a first
 swing:
 
-{% highlight java %}
+```java
 @Path("/v1/weekday/{date}")
 @Produces(MediaType.TEXT_PLAIN)
 public class SkeletonWeekdayResource {
@@ -78,7 +78,7 @@ public class SkeletonWeekdayResource {
     return date + " is on a ???.";
   }
 }
-{% endhighlight %}
+```
 
 You'll notice that the `getWeekday` method takes an argument, `date`, which is
 annotated with `@PathParam`. The `@PathParam` annotation pulls the `date`
@@ -87,16 +87,20 @@ a `String`, and passes it to the `getWeekday` method.
 
 Here's a sample request/response:
 
-    GET /v1/weekday/20060714 HTTP/1.1
-    Host: localhost:8080
-    Accept: */*
+```
+GET /v1/weekday/20060714 HTTP/1.1
+Host: localhost:8080
+Accept: */*
+```
 
 And our resource class responds with:
 
-    HTTP/1.1 200 OK
-    Content-Type: text/plain
+```
+HTTP/1.1 200 OK
+Content-Type: text/plain
 
-    20060714 is on a ???.
+20060714 is on a ???.
+```
 
 This isn't much more complicated than `HelloWorldResource`; we're still in
 could-be-crap-but-looks-good-on-a-slide territory. So let's add the guts of the
@@ -106,7 +110,7 @@ resource--date parsing and weekday calculation. Because Java's `Calendar` and
 
 ### Round Two: Now Make It Work
 
-{% highlight java %}
+```java
 @Path("/v2/weekday/{date}")
 @Produces(MediaType.TEXT_PLAIN)
 public class NaiveWeekdayResource {
@@ -118,7 +122,7 @@ public class NaiveWeekdayResource {
     return dateAsString + " is on a " + date.dayOfWeek().getAsText() + ".";
   }
 }
-{% endhighlight %}
+```
 
 The changes here are obvious: we use `ISO_BASIC`, a parser and formatter, to
 turn `dateAsString` into a `DateTime`, `date`. `date.dayOfWeek()` returns a
@@ -126,16 +130,20 @@ property which we turn into text and send back to the client.
 
 Now it does what we want:
 
-    GET /v2/weekday/20060714 HTTP/1.1
-    Host: localhost:8080
-    Accept: */*
+```
+GET /v2/weekday/20060714 HTTP/1.1
+Host: localhost:8080
+Accept: */*
+```
 
 And then:
 
-    HTTP/1.1 200 OK
-    Content-Type: text/plain
+```
+HTTP/1.1 200 OK
+Content-Type: text/plain
 
-    20060714 is on a Friday.
+20060714 is on a Friday.
+```
 
 But this could still be a Potemkin application. So let's do something you rarely
 see in slide shows. Let's throw some bad input at it.
@@ -144,16 +152,20 @@ see in slide shows. Let's throw some bad input at it.
 
 What happens when someone asks for an invalid date?
 
-    GET /v2/weekday/200607f14 HTTP/1.1
-    Host: localhost:8080
-    Accept: */*
+```
+GET /v2/weekday/200607f14 HTTP/1.1
+Host: localhost:8080
+Accept: */*
+```
 
 Oh geez:
 
-    HTTP/1.1 500 Invalid format: "200607f14" is malformed at "f14"
-    Content-Type: text/html; charset=iso-8859-1
+```
+HTTP/1.1 500 Invalid format: "200607f14" is malformed at "f14"
+Content-Type: text/html; charset=iso-8859-1
 
-    <big-ass stack trace complaining about the date>
+<big-ass stack trace complaining about the date>
+```
 
 That's not terrible, but it needs to change.
 
@@ -168,7 +180,7 @@ care, and they probably shouldn't know what kind of magic is behind the scenes.
 
 So let's add some error handling:
 
-{% highlight java %}
+```java
 @Path("/v3/weekday/{date}")
 @Produces(MediaType.TEXT_PLAIN)
 public class BetterWeekdayResource {
@@ -189,7 +201,7 @@ public class BetterWeekdayResource {
     }
   }
 }
-{% endhighlight %}
+```
 
 This is a pretty simple approach--catch the exception, and throw a
 `WebApplicationException` with an HTTP response explaining the problem. Jersey
@@ -197,16 +209,20 @@ catches the `WebApplicationException` and sends the attached `Response`.
 
 Let's try that again:
 
-    GET /v2/weekday/200607f14 HTTP/1.1
-    Host: localhost:8080
-    Accept: */*
+```
+GET /v2/weekday/200607f14 HTTP/1.1
+Host: localhost:8080
+Accept: */*
+```
 
 Yay!
 
-    HTTP/1.1 400 Bad Request
-    Content-Type: text/plain
+```
+HTTP/1.1 400 Bad Request
+Content-Type: text/plain
 
-    Couldn't parse date: 200607f14 (Invalid format: "200607f14" is malformed at "f14")
+Couldn't parse date: 200607f14 (Invalid format: "200607f14" is malformed at "f14")
+```
 
 Ok, so our code is now correct and handles errors, but its readability has
 suffered--for two lines of domain-specific code, we have nine lines of error
@@ -236,7 +252,7 @@ So we can just write a class which takes a single `String` argument, eh?
 
 Like this:
 
-{% highlight java %}
+```java
 public class SimpleDateParam {
   private static final DateTimeFormatter ISO_BASIC = ISODateTimeFormat.basicDate();
   private final DateTime date;
@@ -264,7 +280,7 @@ public class SimpleDateParam {
     return originalValue;
   }
 }
-{% endhighlight %}
+```
 
 This is a pretty straight-forward class which takes a string, parses it, and
 either throws a `WebApplicationException` or returns an object with a `DateTime`
@@ -273,7 +289,7 @@ and the original parameter.
 We can change our resource class to accept a `SimpleDateParam` argument instead
 of a `String`, which ends up looking like this:
 
-{% highlight java %}
+```java
 @Path("/v4/weekday/{date}")
 @Produces(MediaType.TEXT_PLAIN)
 public class AwesomeWeekdayResource {
@@ -285,7 +301,7 @@ public class AwesomeWeekdayResource {
         + ".";
   }
 }
-{% endhighlight %}
+```
 
 Now that's nice.
 
@@ -324,7 +340,7 @@ it behooves us to streamline the param-writing process as much as possible.
 
 Thus:
 
-{% highlight java %}
+```java
 public abstract class AbstractParam<V> {
   private final V value;
   private final String originalParam;
@@ -364,11 +380,11 @@ public abstract class AbstractParam<V> {
     return "Invalid parameter: " + param + " (" + e.getMessage() + ")";
   }
 }
-{% endhighlight %}
+```
 
 Which means our param class ends up look like this:
 
-{% highlight java %}
+```java
 public class DateParam extends AbstractParam<DateTime> {
   private static final DateTimeFormatter ISO_BASIC = ISODateTimeFormat.basicDate();
 
@@ -381,11 +397,11 @@ public class DateParam extends AbstractParam<DateTime> {
     return ISO_BASIC.parseDateTime(param);
   }
 }
-{% endhighlight %}
+```
 
 And our resource class looks like this:
 
-{% highlight java %}
+```java
 @Path("/v5/weekday/{date}")
 @Produces(MediaType.TEXT_PLAIN)
 public class FinalWeekdayResource {
@@ -397,7 +413,7 @@ public class FinalWeekdayResource {
         + ".";
   }
 }
-{% endhighlight %}
+```
 
 ### tl;dr
 

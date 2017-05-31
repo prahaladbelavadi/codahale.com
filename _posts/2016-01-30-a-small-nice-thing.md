@@ -30,9 +30,9 @@ to a novice familiar with the underlying domain.
 
 #### Scala
 
-{% highlight scala %}
+```scala
 (a, b).zipped.map(_+_)
-{% endhighlight %}
+```
 
 For Scala, you'd need to explain tuples, regular method notation, `zipped`,
 dotless/parenless/infix method notation (e.g. `_ + _`), placeholder syntax
@@ -47,41 +47,41 @@ require a large number of concepts to explain.)
 
 #### Ruby
 
-{% highlight ruby %}
+```ruby
 a.zip(b).map { |(x, y)| x + y }
-{% endhighlight %}
+```
 
 Ruby would require an explanation of method invocation, `zip`, `map`, method
 blocks, and parameter destructuring, and infix notation.
 
 #### Python
 
-{% highlight python %}
+```python
 [sum(t) for t in zip(a, b)]
-{% endhighlight %}
+```
 
 For Python you'd need to explain list comprehensions, function invocation,
 `sum`, and `zip`.
 
 #### Javascript
 
-{% highlight javascript %}
+```javascript
 a.map(function(x, i) {
     return x + b[i];
 });
-{% endhighlight %}
+```
 
 Javascript requires method invocation, `map`, anonymous function notation, the
 `return` keyword, infix operators, and array access.
 
 #### Go
 
-{% highlight go %}
+```go
 s := make([]int, len(a))
 for i, x := range a {
     s[i] = x + b[i];
 }
-{% endhighlight %}
+```
 
 Go is unsurprisingly a bit more verbose, as you need to explain `make`, slice
 type notation, `len`, short variable declarations (i.e. `:=`), `range` loops,
@@ -89,9 +89,9 @@ and index expressions and assignment,
 
 #### Clojure
 
-{% highlight clojure %}
+```clojure
 (map + a b)
-{% endhighlight %}
+```
 
 For Clojure you need to explain s-expressions and `map`. That's
 it. Literally. Clojure is a [Lisp-1][lisp1], so referring to the `+` function is
@@ -105,56 +105,56 @@ What happens if we need to add a third list of numbers, `c`?
 
 #### Scala
 
-{% highlight scala %}
+```scala
 (a, b, c).zipped.map(_+_+_)
-{% endhighlight %}
+```
 
 Scala handles this relatively gracefully, requiring only a 3-tuple receiver and
 another infix operator in the anonymous function.
 
 #### Python
 
-{% highlight python %}
+```python
 [sum(t) for t in zip(a, b, c)]
-{% endhighlight %}
+```
 
 Python just needs an additional parameter to `zip`. Because `sum` operates on
 iterables, and `zip` returns a list of tuples, both forms are almost identical.
 
 #### Ruby
 
-{% highlight ruby %}
+```ruby
 a.zip(b, c).map { |(x, y, z)| x + y + z }
-{% endhighlight %}
+```
 
 Ruby needs an additional parameter to `zip` and another addition.
 
 #### Javascript
 
-{% highlight javascript %}
+```javascript
 a.map(function(x, i) {
     return x + b[i] + c[i];
 });
-{% endhighlight %}
+```
 
 Javascript adds another array access and addition, which isn't too bad.
 
 #### Go
 
-{% highlight go %}
+```go
 s := make([]int, len(a))
 for i, x := range a {
     s[i] = x + b[i] + c[i];
 }
-{% endhighlight %}
+```
 
 Go handles the situation similarly.
 
 #### Clojure
 
-{% highlight clojure %}
+```clojure
 (map + a b c)
-{% endhighlight %}
+```
 
 Like Python, Clojure remains almost exactly the same as the original. We add `c`
 as an additional parameter to `map`---that's it.
@@ -163,9 +163,9 @@ as an additional parameter to `map`---that's it.
 Python's `sum`, `+` is neither infix (as Clojure has no such thing) nor
 binary. Like `map`, it's a variadic function:
 
-{% highlight clojure %}
-(+ 1 2 3) => 6
-{% endhighlight %}
+```clojure
+(+ 1 2 3) ;=> 6
+```
 
 If either `map` or `+` were of fixed arity, this would not be possible.
 

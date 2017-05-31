@@ -16,11 +16,11 @@ of retrieving information about the incoming request: from the base class.
 
 Take this Rails controller action, for example:
 
-{% highlight ruby %}
+```ruby
 def show
   render(:text => "You asked for #{request.url}")
 end
-{% endhighlight %}
+```
 
 `request` is a method defined on `ActionController::Base` which returns an 
 object encapsulating the information about the current HTTP request.
@@ -35,11 +35,11 @@ test.
 Jersey avoids this situation by injecting the required information into the 
 resource class:
 
-{% highlight java %}
+```java
 public String show(@Context UriInfo uriInfo) {
   return "You asked for " + uriInfo.getAbsolutePath();
 }
-{% endhighlight %}
+```
 
 Jersey detects the `@Context` annotation and automatically injects a `UriInfo`
 with the current request's data into the method. You can do this for 
@@ -48,7 +48,7 @@ with the current request's data into the method. You can do this for
 When it comes time to test this class, it's a simple matter of making a mock
 `UriInfo` and passing it in:
 
-{% highlight java %}
+```java
 @Test
 public void itReturnsTheRequestURI() throws Exception {
     final MyResource resource = new MyResource();
@@ -58,7 +58,7 @@ public void itReturnsTheRequestURI() throws Exception {
     
     assertThat(resource.show(uriInfo), is("You asked for /wooooo"));
 }
-{% endhighlight %}
+```
 
 Because the resource class doesn't go out and get the `UriInfo` itself, it's 
 much easier to test.
@@ -78,28 +78,26 @@ But it's a tedious thing to have our resource class have an `HttpHeaders`
 instance injected and then get the first item from the 
 `getAcceptableLanguages()` results:
 
-{% highlight java %}
+```java
 public String uppercase(@Context HttpHeaders headers) {
     return "this is lowercase".toUppercase(headers.getAcceptableLanguages().get(0));
 }
-{% endhighlight %}
+```
 
 In order to test that, we'll have to come up with an `HttpHeaders` mock and stub
 its `getAcceptableLanguages()` to return a list of locales. Bleagh.
 
-<ins>
 **Update:** If you're wondering why you'd need a `Locale` to convert a string to
 uppercase, check out the Turkish language. The uppercase version of **i** 
 (U+0069) is **İ** (U+0130), and the lowercase version of **I** (U+0049) is **ı** 
 (U+0131). It matters.
-</ins>
 
 ### Now make it uglier
 
 In keeping with my "so what if it looks good on a slide" motif here, I'm also
 going to throw in error handling: what if the user doesn't specify a locale?
 
-{% highlight java %}
+```java
 public String uppercase(@Context HttpHeaders headers) {
     final List<Locale> locales = headers.getAcceptableLanguages();
     final Locale selectedLocale;
@@ -110,7 +108,7 @@ public String uppercase(@Context HttpHeaders headers) {
     }
     return "this is lowercase".toUppercase(selectedLocale);
 }
-{% endhighlight %}
+```
 
 That's goddamn horrible--we'll have to test that logic all over the place, 
 lest we end up throwing an `IndexOutOfBoundsException` because someone's HTTP
@@ -138,7 +136,7 @@ to not require a template base class.
 Luckily for us, we can kill two birds with one stone and implement both
 complimentary responsibilities in a single class:
 
-{% highlight java %}
+```java
 @Provider
 public class LocaleProvider
       extends AbstractHttpContextInjectable<Locale>
@@ -167,7 +165,7 @@ public class LocaleProvider
         return locales.get(0);
     }
 }
-{% endhighlight %}
+```
 
 This is kind of a complicated class. Let's cover a few things.
 
@@ -188,15 +186,15 @@ This is kind of a complicated class. Let's cover a few things.
 When we put `LocaleProvider` in a package that Jersey's configured to scan, we 
 can reduce our resource class logic to this:
 
-{% highlight java %}
+```java
 public String uppercase(@Context Locale locale) {
     return "this is lowercase".toUppercase(locale);
 }
-{% endhighlight %}
+```
 
 Then our test looks like this:
 
-{% highlight java %}
+```java
 @Test
 public void itReturnsAnUppercaseString() {
     final MyResource resource = new MyResource();
@@ -206,7 +204,7 @@ public void itReturnsAnUppercaseString() {
         is("THIS IS LOWERCASE")
     );
 }
-{% endhighlight %}
+```
 
 But I don't think we're done yet.
 
@@ -216,7 +214,7 @@ Much like [parameter classes](/what-makes-jersey-interesting-parameter-classes),
 our code gets cleaner the more injection providers we write, so we need to 
 extract out the guts into a base class:
 
-{% highlight java %}
+```java
 public abstract class AbstractInjectableProvider<E>
       extends AbstractHttpContextInjectable<E>
       implements InjectableProvider<Context, Type> {
@@ -245,11 +243,11 @@ public abstract class AbstractInjectableProvider<E>
         return ComponentScope.PerRequest;
     }
 }
-{% endhighlight %}
+```
 
 Now our provider is sleek and shiny:
 
-{% highlight java %}
+```java
 @Provider
 public class LocaleProvider extends AbstractInjectableProvider<Locale> {
     public LocaleProvider() {
@@ -265,7 +263,7 @@ public class LocaleProvider extends AbstractInjectableProvider<Locale> {
         return locales.get(0);
     }
 }
-{% endhighlight %}
+```
 
 Now both our resource class and our `LocaleProvider` are composed and testable.
 

@@ -25,15 +25,15 @@ algorithm to compare a candidate HMAC digest with the calculated digest.
 
 This is the offending code in Python:
 
-{% highlight python %}
+```python
 return self.Sign(msg) == sig_bytes
-{% endhighlight %}
+```
 
 and in Java:
 
-{% highlight java %}
+```java
 return Arrays.equals(hmac.doFinal(), sigBytes);
-{% endhighlight %}
+```
 
 A value which shares no bytes in common with the secret digest will return
 immediately; a value which shares the first 15 bytes will return 15 compares
@@ -94,7 +94,7 @@ Instead of using a variable-time algorithm for comparing secrets, you should be
 using constant-time algorithms. Lawson recommends something like the following
 in Python:
 
-{% highlight python %}
+```python
 def is_equal(a, b):
     if len(a) != len(b):
         return False
@@ -103,11 +103,11 @@ def is_equal(a, b):
     for x, y in zip(a, b):
         result |= x ^ y
     return result == 0
-{% endhighlight %}
+```
 
 In Java, that would look like this:
 
-{% highlight java %}
+```java
 public static boolean isEqual(byte[] a, byte[] b) {
     if (a.length != b.length) {
         return false;
@@ -119,7 +119,7 @@ public static boolean isEqual(byte[] a, byte[] b) {
     }
     return result == 0;
 }
-{% endhighlight %}
+```
 
 ### Yay! Problem solved, right?
 
@@ -128,7 +128,7 @@ Oh, if only.
 Check out what's inside of `java.security.MessageDigest` as recently as Java 6.0
 Update 15:
 
-{% highlight java %}
+```java
 /**
   * Compares two digests for equality. Does a simple byte compare.
   *
@@ -149,7 +149,7 @@ public static boolean isEqual(byte digesta[], byte digestb[]) {
     }
     return true;
 }
-{% endhighlight %}
+```
 
 ### Wait What
 
