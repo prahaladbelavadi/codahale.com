@@ -2,6 +2,7 @@ permalink: /:title/
 highlighter: rouge
 markdown: kramdown
 name: codahale.com
+lsi: true
 assets:
   compress:
     css:  sass
