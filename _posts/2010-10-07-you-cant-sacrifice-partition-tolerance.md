@@ -1,7 +1,7 @@
 ---
 title: You Can’t Sacrifice Partition Tolerance
 layout: post
-summary: In which I suggest a better conceptual framework for distributed systems than the CAP conjecture.
+summary: In which there are limits to the CAP conjecture.
 ---
 
 I've seen a number of distributed databases recently

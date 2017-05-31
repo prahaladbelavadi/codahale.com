@@ -1,7 +1,7 @@
 ---
 title: "What Makes Jersey Interesting: Parameter Classes"
 layout: post
-summary: In which I describe Jersey's parameter classes and how they make life easier for developing RESTful APIs.
+summary: In which I suggest you steal Jersey's parameter classes.
 ---
 
 For folks who have known me for a while, this may come as a bit of a shock:
