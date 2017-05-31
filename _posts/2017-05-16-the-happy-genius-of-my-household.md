@@ -41,7 +41,7 @@ _what if the cloud was built on top of us_?
 The potential upside of these container platforms is well-marketed but the costs are far less widely
 acknowledged.
 
-### You only get one hill to die on, so choose wisely.
+### You only get one hill to die on, <br>so choose wisely.
 
 A viable production install of a container platform usually looks something like this. First, you
 set up a clustered configuration service (e.g. Consul, Etcd, ZooKeeper). Second, you set up a
@@ -71,7 +71,7 @@ in your cloud provider’s economies of scale wouldn’t make more sense.
 At Skyliner, we came to the conclusion that the point of running our software in the cloud was to
 make life easier—not more exciting—and we think we’ve hit a fine balance in how to accomplish this.
 
-### Use containers. Not too much. Mostly for packaging.
+### Use containers. Not too much.<br> Mostly for packaging.
 
 Skyliner uses containers purely as an application packaging system, allowing you to build a
 container image on your laptop, build server, etc. and have a high degree of confidence that it can

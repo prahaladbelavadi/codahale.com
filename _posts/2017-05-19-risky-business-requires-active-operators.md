@@ -53,7 +53,7 @@ automatically verified, we must ensure that our systems keep humans operators ac
 they’re the only ones who will be able to detect and
 [respond](https://www.youtube.com/watch?v=pzzQ42D9Srw) to such incidents to keep the system safe.
 
-### On the care and feeding of human operators
+### On the care and feeding<br> of human operators
 
 An active human operator is one who:
 
@@ -71,7 +71,7 @@ visible and explicit, we also help prepare human operators to respond to possibl
 more proximal an action is to its effect, the easier it becomes for us to reason about the immediate
 cause of an incident while it’s happening.
 
-### A combination emergency brake/gas pedal
+### A combination emergency brake /<br> gas pedal
 
 For example, consider the relatively common practice of running pending database migrations as part
 of a successful deploy. On the happy path, this is a huge time-saver, and removes the potential for
