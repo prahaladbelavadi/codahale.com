@@ -157,8 +157,8 @@ randomly.
 
 ---
 
-_Thanks to [Thomas Ptacek](https://twitter.com/tqbf) for reviewing this post. Any mistakes contained
-are mine, not his._
+_Thanks to [Thomas Ptacek](https://twitter.com/tqbf) for reviewing this post. Any mistakes in this
+article are mine, not his._
 
 [DP]: https://moxie.org/blog/the-cryptographic-doom-principle/
 [AEAD-INT]: https://tools.ietf.org/html/rfc5116
