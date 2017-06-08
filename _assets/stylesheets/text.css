@@ -98,3 +98,7 @@ footer {
 footer span {
     font-style: italic;
 }
+
+blockquote .MathJax {
+    color: #555555;
+}
