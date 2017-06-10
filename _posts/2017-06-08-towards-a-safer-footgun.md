@@ -60,9 +60,11 @@ ChaCha20-Poly1305 uses ChaCha20, a stream cipher, which is vulnerable to the sam
 nonce ever be reused.
 
 AES-GCM and ChaCha20-Poly1305 both provide integrity by hashing the ciphertext with polynomial
-message authentication codes (GHASH for the former, Poly1305 for the latter). The reuse of a
-key/nonce pair would allow an attacker to essentially recover the authentication key used to produce
-the tags, allowing them to forge or modify messages arbitrarily.
+message authentication codes (GHASH for the former, Poly1305 for the latter). These types of
+algorithms are vulnerable to [forgery attacks][GCM-WEAK] should an authentication key ever be
+reused. ChaCha20-Poly1305's construction [is resilient this sort of attack][AE-MOD] because the
+authentication key is derived from the ChaCha20 keystream, but AES-GCM is [very fragile][GCM-FRAG]
+and fails catastrophically in the event of key/nonce reuse.
 
 Because key/nonce reuse is essentially impossible in the context of a TLS connection, these
 constructions trade nonce-misuse resistance for performance. But what about in other contexts?
@@ -157,6 +159,13 @@ randomly.
 
 ---
 
+### Updated June 10, 2017
+
+* Fixed my assertions about ChaCha20-Poly1305 forgery attacks. Thanks,
+  [@dchest](https://twitter.com/dchest/status/863295115477094400)! 
+
+---
+
 _Thanks to [Thomas Ptacek](https://twitter.com/tqbf) for reviewing this post. Any mistakes in this
 article are mine, not his._
 
@@ -178,3 +187,6 @@ article are mine, not his._
 [QUIC]: https://www.chromium.org/quic
 [XSALSA20]: https://cr.yp.to/snuffle/xsalsa-20081128.pdf
 [JAVA]: https://github.com/codahale/aes-gcm-siv
+[AE-MOD]: https://eprint.iacr.org/2017/239.pdf
+[GCM-WEAK]: https://eprint.iacr.org/2013/144.pdf
+[GCM-FRAG]: https://eprint.iacr.org/2013/157.pdf
