@@ -17,7 +17,7 @@ our development strategy, and how you can improve the transparency of your own
 software.
 
 Sadly, that talk wasn't recorded, but you can find the slides
-[here](https://dl.dropbox.com/u/2744222/2011-04-09-Metrics-Metrics-Everywhere.pdf).
+[here](https://codahale.com/codeconf-2011-04-09-metrics-metrics-everywhere.pdf).
 I ended up giving the talk again at Pivotal Labs a few months later, which
 [was recorded](http://www.youtube.com/watch?v=czes-oa0yik).
 
@@ -32,7 +32,7 @@ engineers, layed out the sociotechnical challenges facing organizations trying t
 build transparent architectures, and mentioned in passing how all of that relates
 to making money.
 
-[This talk was recorded](https://dl.dropboxusercontent.com/u/2744222/2012-04-10-The-Programming-Ape.mp4).
+[This talk was recorded](https://www.youtube.com/watch?v=e_6gkfTomUQ).
 
 #### The Other Side Of Software Architecture
 
@@ -44,5 +44,5 @@ In 2012, I was invited to Etsy's Code As Craft series and spoke about how
 organizational structures influence software and the implications for designing
 scalable, resilient software systems and companies.
 
-You can watch this talk [here](http://www.livestream.com/etsy/video?clipId=pla_780bfe22-12e8-4c7f-8c7b-06cc6cac9c49)
+You can watch this talk [here](https://www.youtube.com/watch?v=f7msw3svPdA)
 or [see the slides](https://dl.dropboxusercontent.com/u/2744222/2012-06-28-The-Other-Side-Of-Software-Architecture.pdf).
