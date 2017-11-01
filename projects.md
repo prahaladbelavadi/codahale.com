@@ -32,7 +32,8 @@ engineers, layed out the sociotechnical challenges facing organizations trying t
 build transparent architectures, and mentioned in passing how all of that relates
 to making money.
 
-[This talk was recorded](https://www.youtube.com/watch?v=e_6gkfTomUQ).
+[This talk was recorded](https://www.youtube.com/watch?v=e_6gkfTomUQ) and you can
+find the slides [here](https://codahale.com/2012-04-10-The-Programming-Ape.pdf).
 
 #### The Other Side Of Software Architecture
 
@@ -45,4 +46,4 @@ organizational structures influence software and the implications for designing
 scalable, resilient software systems and companies.
 
 You can watch this talk [here](https://www.youtube.com/watch?v=f7msw3svPdA)
-or [see the slides](https://dl.dropboxusercontent.com/u/2744222/2012-06-28-The-Other-Side-Of-Software-Architecture.pdf).
+or [see the slides](https://codahale.com/2012-06-28-The-Other-Side-Of-Software-Architecture.pdf).
